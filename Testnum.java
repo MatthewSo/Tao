@@ -11,8 +11,9 @@ public class Testnum{
 	    if (changePercent > volatility) {
 		changePercent -= (2 * volatility);
 	    }
-	    double  changeAmount = oldPrice * changePercent/100;
+	    double  changeAmount = oldPrice * changePercent/100 * (1+momentum);
 	    newPrice = oldPrice + changeAmount;
+	    momentum = (changeAmount/100);
 	    /*if (newPrice < MIN_PRICE) {
 		newPrice += Math.abs(changeAmount) * 2;
 	    } else if (newPrice > MAX_PRICE) {
@@ -26,7 +27,7 @@ public class Testnum{
 
 	
     public static void main(String[] args){
-	creatnum(900,2.3,0.0);
+	creatnum(900,2.3,-0.2);
     }
 }
 	
