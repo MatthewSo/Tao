@@ -4,7 +4,7 @@ public class Testnum{
 	double  newPrice =init;
 	for(int i = 0; i < 52; i++){
 	    oldPrice= newPrice;
-	    double rnd = Math.random();
+	    double rnd = Math.random() -0.5;
 
 	    double changePercent = 2 * volatility * rnd;
 
