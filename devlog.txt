@@ -3,4 +3,12 @@ Max created README.txt
 Matt created devlog.txt
 
 ##########################
+Day 2
+Matt was absent but we started running test algorithims
+
+##########################
+Day3
+We created another alogrithim, with different projections. Still not refined
+
+Day 4 
 

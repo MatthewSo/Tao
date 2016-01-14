@@ -1,0 +1,11 @@
+Started 1/14/16
+-refine algorithim
+-write graphing function
+-write stock classes
+-write sub-stock classes - Startup, Competitors, Independents
+-write individual stocks
+-write main method 
+-write clasess for incrementing by week
+-write goals
+-write headlines
+
