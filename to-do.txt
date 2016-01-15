@@ -8,4 +8,6 @@ Started 1/14/16
 -write clasess for incrementing by week
 -write goals
 -write headlines
+-design menu layouts
+-TEST
 
