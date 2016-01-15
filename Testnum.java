@@ -2,7 +2,7 @@ public class Testnum{
     public static void  creatnum(double init, double volatility, double momentum){
 	double oldPrice = init;
 	double  newPrice =init;
-	for(int i = 0; i < 52; i++){
+	for(int i = 0; i < 365; i++){
 	    oldPrice= newPrice;
 	    double rnd = Math.random();
 
@@ -11,9 +11,9 @@ public class Testnum{
 	    if (changePercent > volatility) {
 		changePercent -= (2 * volatility);
 	    }
-	    double  changeAmount = oldPrice * changePercent/100 ;
+	    double  changeAmount = oldPrice * changePercent/100  + momentum;
 	    newPrice = oldPrice + changeAmount;
-	    momentum = (changeAmount/100);
+	    momentum = (changeAmount/10);
 	    /*if (newPrice < MIN_PRICE) {
 		newPrice += Math.abs(changeAmount) * 2;
 	    } else if (newPrice > MAX_PRICE) {
@@ -27,7 +27,7 @@ public class Testnum{
 
 	
     public static void main(String[] args){
-	creatnum(900,2.3,0.0);
+	creatnum(900,2.3,10);
     }
 }
 	
