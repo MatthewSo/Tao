@@ -1,10 +1,17 @@
+import java.util.*;
+
 public class Stock{
     protected double  marVariable;
     protected double volatility;
     protected double  curVal;
     protected double  momentum;
     protected  String name;
-    protected ArrayList<double> prices;
+    protected double marVal;
+    protected ArrayList<Double> prices;
+
+    public Stock(){
+    }
+
     public double getVolatility(){
 	return volatility;
     }
@@ -14,7 +21,7 @@ public class Stock{
     public String  getName(){
 	return name;
     }
-    public ArrayList<double> getPrices(){
+    public ArrayList<Double> getPrices(){
 	return prices;
     }
     public double getMarVal(){
@@ -27,7 +34,7 @@ public class Stock{
       public double setVolatility(double u){
 	  double temp1 = volatility;
 	  volatility = u;
-	return temp;
+	return temp1;
     }
     public double setCurVal(double u){
 	double temp1 = curVal;
@@ -39,11 +46,9 @@ public class Stock{
 	name = u;
 	return temp1;
     }
-    public ArrayList<double> setPrices(ArrayList<double> u){
-	ArrayList<double> temp1 = prices;
+    public ArrayList<Double> setPrices(ArrayList<Double> u){
+	ArrayList<Double> temp1 = prices;
 	prices = u;
-      
-
 	return temp1;
     }
     public double setMarVal(double u){
@@ -52,9 +57,8 @@ public class Stock{
 	return temp1;
     }
     public double setMomentum(double u){
-		double temp1 = momentum;
+	double temp1 = momentum;
 	momentum = u;
 	return temp1;
     }
-
-    
+}
