@@ -10,5 +10,8 @@ Matt was absent but we started running test algorithims
 Day3
 We created another alogrithim, with different projections. Still not refined
 
+##########################
 Day 4 
 
+Matt created 4 methods for Graph.java. Took a while, should be complete.
+Matt adjusted Stock.java functionality. Added get and set methods.

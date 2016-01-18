@@ -1,7 +1,6 @@
 Started 1/14/16
 -refine algorithim
--write graphing function
--write stock classes
+-write stock classes-almost done.
 -write sub-stock classes - Startup, Competitors, Independents
 -write individual stocks
 -write main method 
