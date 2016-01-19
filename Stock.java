@@ -1,7 +1,7 @@
+
 import java.util.*;
 
 public class Stock{
-    protected double  marVariable;
     protected double volatility;
     protected double  curVal;
     protected double  momentum;
@@ -9,7 +9,12 @@ public class Stock{
     protected double marVal;
     protected ArrayList<Double> prices;
 
-    public Stock(){
+    public Stock(String nm, double cV, double vol, double mom, ArrayList p ){
+	name = nm;
+	curVal = cV;
+	volatility = vol;
+	momentum = mom;
+	prices = p;
     }
 
     public double getVolatility(){
@@ -61,7 +66,7 @@ public class Stock{
 	momentum = u;
 	return temp1;
     }
-    public ArratList<Double>  progress(){
+    public ArrayList<Double> progress(){
 	double oldPrice = curVal;
 	double  newPrice =curVal;
 	ArrayList<Double> weekly;
@@ -81,7 +86,7 @@ public class Stock{
 		//momentum += (1 * changePercent/1000);
 	    }
 	    newPrice = oldPrice + changeAmount ;
-	    Prices.add(newPrice);
+	    prices.add(newPrice);
 	    weekly.add(newPrice);
 	    curVal = newPrice;
 	}
@@ -89,7 +94,7 @@ public class Stock{
     }
     
     public String toString(){
-	String retstr = "Current value : " + curVal + " %change : " + ((curVal - Prices.get(Prices.size() -1))/100) + "\n";
+	String retstr = "Current value : " + curVal + " %change : " + ((curVal - prices.get(prices.size() -1))/100) + "\n";
 	Graph g = new Graph(this);
 	retstr += g.printGraph();
 	return retstr;
