@@ -78,18 +78,19 @@ public class Graph{
 		}
 	}
 
-	public void printGraph(){
+	public String printGraph(){
+	    String ret;
 		for (int i=matrix[0].length-1; i>0;i--){
 			for (int j=0;j<matrix.length;j++){
 				if (matrix[j][i] == 1){
-					System.out.print("-");
+					ret += ("-");
 				} else {
-					System.out.print(" ");
+					ret += (" ");
 				}
 			}
-			System.out.println("");
+			ret += ("") + "\n";
 		}
-		System.out.println("Max Value: " + max+" Min Value: " + min);
+		ret += ("Max Value: " + max+" Min Value: " + min) +"\n";
 	}
 
 
