@@ -7,6 +7,7 @@ public class Stock{
     protected double  momentum; //about -2 - 2
     protected double  momVol; // about 0- 1
     protected  String name; 
+    protected int amtOwned;
     protected ArrayList<Double> prices;
 
     public Stock(String nm, double cV, double vol, double mom, ArrayList p, double mV ){
@@ -16,7 +17,14 @@ public class Stock{
 	momentum = mom;
 	prices = p;
 	momVol = mV;
+	amtOwned = 0;
     }
+    public int getAmtOwned(){
+	return amtOwned;}
+    public int setAmtOwned(int u){
+        int temp1 = curVal;
+	curVal = u;
+	return temp1;}
     public double getMomVol(){
 	return momVol;
     }
