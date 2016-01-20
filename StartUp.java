@@ -4,10 +4,10 @@ import java.util.*;
  
 public class StartUp extends Stock{
 
-        public ArrayList<Double> progress(){
+     public ArrayList<Double> progress(){
 	double oldPrice = curVal;
 	double  newPrice =curVal;
-	ArrayList<Double> weekly;
+	ArrayList<Double> weekly = new ArrayList<Double>();
 	for(int i = 0; i < 7; i++){
 	    oldPrice= newPrice;
 	    double rnd = Math.random();
@@ -15,13 +15,14 @@ public class StartUp extends Stock{
 	    double changePercent = volatility * rnd;
 	    double newrand = (Math.random() * 10) -5;
 	    double changeAmount;
+	    //the momentum change is greater in Startups when it is positive
 	    if ( newrand >= momentum){
 		changeAmount = oldPrice * (-1 * changePercent/100);
-		//momentum += (-1 * changePercent/1000);
+		momentum += (-1 * momVol * changePercent/1000);
 	    }
 	    else{
 		changeAmount = oldPrice * (1 * changePercent/100) ;
-		//momentum += (1 * changePercent/1000);
+		momentum += (1 * momVol  * changePercent/850);
 	    }
 	    newPrice = oldPrice + changeAmount ;
 	    prices.add(newPrice);
@@ -29,6 +30,4 @@ public class StartUp extends Stock{
 	    curVal = newPrice;
 	}
 	return weekly;
-	}}
-    
-    
+     }}

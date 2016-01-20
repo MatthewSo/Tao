@@ -2,21 +2,24 @@
 import java.util.*;
 
 public class Stock{
-    protected double volatility;
-    protected double  curVal;
-    protected double  momentum;
-    protected  String name;
-    protected double marVal;
+    protected double volatility; //about  0-5
+    protected double  curVal;//depends
+    protected double  momentum; //about -2 - 2
+    protected double  momVol; // about 0- 1
+    protected  String name; 
     protected ArrayList<Double> prices;
 
-    public Stock(String nm, double cV, double vol, double mom, ArrayList p ){
+    public Stock(String nm, double cV, double vol, double mom, ArrayList p, double mV ){
 	name = nm;
 	curVal = cV;
 	volatility = vol;
 	momentum = mom;
 	prices = p;
+	momVol = mV;
     }
-
+    public double getMomVol(){
+	return momVol;
+    }
     public double getVolatility(){
 	return volatility;
     }
@@ -79,11 +82,11 @@ public class Stock{
 	    double changeAmount;
 	    if ( newrand >= momentum){
 		changeAmount = oldPrice * (-1 * changePercent/100);
-		//momentum += (-1 * changePercent/1000);
+		momentum += (-1 * momVol * changePercent/1000);
 	    }
 	    else{
 		changeAmount = oldPrice * (1 * changePercent/100) ;
-		//momentum += (1 * changePercent/1000);
+		momentum += (1 * momVol  * changePercent/1000);
 	    }
 	    newPrice = oldPrice + changeAmount ;
 	    prices.add(newPrice);
