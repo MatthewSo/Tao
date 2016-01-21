@@ -10,9 +10,9 @@ public class Player{
 	difficulty = d;
 	money = m;}
     
-    public double getMoney(){
+    public double getDol(){
 	return money;}
-    public double setMoney(double m){
+    public double setDol(double m){
 	double temp1 = money;
 	money = m;
 	return temp1;}

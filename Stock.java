@@ -20,7 +20,7 @@ public class Stock{
 	amtOwned = 0;
     }
     public int getAmtOwned(){
-	return amtOwned;}
+ return amtOwned;}
     public int setAmtOwned(int u){
         int temp1 = amtOwned;
 	amtOwned = u;
@@ -40,7 +40,6 @@ public class Stock{
     public ArrayList<Double> getPrices(){
 	return prices;
     }
-
     public double getMomentum(){
 	return momentum;
     }
@@ -65,7 +64,6 @@ public class Stock{
 	prices = u;
 	return temp1;
     }
-
     public double setMomentum(double u){
 	double temp1 = momentum;
 	momentum = u;
@@ -99,7 +97,7 @@ public class Stock{
     }
     
     public String toString(){
-	String retstr = "Current value : " + curVal + " %change : " + ((curVal - prices.get(prices.size() -1))/100) + "\n";
+	String retstr = "Current value : " + curVal; //" %change : " + ((curVal - prices.get(prices.size()))/100) + "\n";
 	Graph g = new Graph(this);
 	retstr += g.printGraph();
 	return retstr;
