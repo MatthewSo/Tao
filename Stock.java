@@ -22,8 +22,8 @@ public class Stock{
     public int getAmtOwned(){
 	return amtOwned;}
     public int setAmtOwned(int u){
-        int temp1 = curVal;
-	curVal = u;
+        int temp1 = amtOwned;
+	amtOwned = u;
 	return temp1;}
     public double getMomVol(){
 	return momVol;
@@ -40,9 +40,7 @@ public class Stock{
     public ArrayList<Double> getPrices(){
 	return prices;
     }
-    public double getMarVal(){
-	return marVal;
-    }
+
     public double getMomentum(){
 	return momentum;
     }
@@ -67,11 +65,7 @@ public class Stock{
 	prices = u;
 	return temp1;
     }
-    public double setMarVal(double u){
-	double temp1 = marVal;
-	marVal = u;
-	return temp1;
-    }
+
     public double setMomentum(double u){
 	double temp1 = momentum;
 	momentum = u;

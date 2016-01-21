@@ -94,6 +94,13 @@ public class Graph{
 	return ret;
     }
     
-    
+    public static void main(String[] args){
+	ArrayList<Double> aList = new ArrayList<Double>();
+	for (int i = 0; i < 100; i++){
+	    aList.add(100.0 + i);}
+	Stock i = new Stock("g",1.1,1.1,1.1,aList,1.1);
+	i.setPrices(aList);
+	Graph testi = new Graph(i);
+	System.out.println(testi.printGraph());}
     
 }
