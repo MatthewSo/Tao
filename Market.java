@@ -33,12 +33,12 @@ public class Market{
 	int option = 0;
 	int num =0;
 	int temp = 0;
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned");
+	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress \n [7]Change momentum test ");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
 	catch ( IOException e ) { }
-	if (temp < 6 && temp > 0){
+	if (temp < 600 && temp > 0){
 	    option=temp;
 	}
 	/////////////////////////
@@ -80,7 +80,7 @@ public class Market{
 		    }
 		}
 	    }
-	    if (option == 5){
+	    else if (option == 5){
 		System.out.println("Your Balance is: " + pl.getDol());
 		for (Stock a:newe){
 		    if( a.getAmtOwned() > 0){
@@ -88,13 +88,31 @@ public class Market{
 		    }
 		}
 	    }
+	    else if (option == 6){
+		for (int i =0; i < newe.size(); i++){
+		    newe.get(i).progress();
+		}
+		System.out.println("test");
+		view(newe);
+	    }
+	    else if (option == 7){
+		double numb = 0;
+		for (int  i =0; i < newe.size(); i++){
+		    System.out.println("set momentum for " + newe.get(i).getName() +" ");
+		    		try{
+		    numb =  Double.parseDouble( in.readLine() );
+		}
+		catch ( IOException e ) { }
+		    newe.get(i).setMomentum(numb);
+		}
+	    }
 	
-	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned");
+	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress \n [7]Change momentum test ");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
 	    }
 	    catch ( IOException e ) { }
-	    if (temp < 6 && temp > 0){
+	    if (temp < 6000 && temp > 0){
 		option= temp;
 	}
 	}
