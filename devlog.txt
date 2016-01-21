@@ -17,3 +17,14 @@ Matt created 4 methods for Graph.java. Took a while, should be complete.
 Matt adjusted Stock.java functionality. Added get and set methods.
 Max ajusted Graph to return a string
 Max added printing of graph and alogrithim calculation to Stock.java
+
+Day 5
+Matt added Compeptitor class
+Matt bug-fixed graph.java
+Matt added Startup.
+Matt added Stock constructor.
+
+Day 6
+
+Matt added amtOwned to stock
+Matt revised SubStock progress algorithms. Added momVol.
