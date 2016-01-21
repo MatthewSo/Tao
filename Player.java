@@ -1,11 +1,14 @@
+import java.util.*;
+
 public class Player{
     String name;
     String difficulty;
     double money;
-    ArrayList<double> pastMoney = new ArrayList<double>();
-    public Player(String n, String d){
+    ArrayList<Double> pastMoney = new ArrayList<Double>();
+    public Player(String n, String d, double m){
 	name = n;
-	difficulty = d;}
+	difficulty = d;
+	money = m;}
     
     public double getMoney(){
 	return money;}
