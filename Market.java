@@ -3,7 +3,6 @@ import java.io.*;
 public class Market{
 
     private Player pl;
-    private int difficulty;
     private ArrayList<Stock> stocks;
     private InputStreamReader isr;
     private BufferedReader in;
@@ -21,13 +20,10 @@ public class Market{
 	in = new BufferedReader( isr );
     }
     
-    public void chooseDifficulty(int i, Player pl){
-	difficulty = i;
-	
-    }
     public static void view(ArrayList<Stock> st){
-	for(Stock a:st){
-	    System.out.println(a.getName() + "|" + a.getCurVal() + "\n" + a);
+	for(int i = 0; i < st.size(); i++){
+	    Stock a = st.get(i);
+	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() + "\n" + a);
 	}
     }
 	
@@ -37,69 +33,73 @@ public class Market{
 	int option = 0;
 	int num =0;
 	int temp = 0;
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back");
+	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
 	catch ( IOException e ) { }
-	if (temp < 5 && temp > 0){
+	if (temp < 6 && temp > 0){
 	    option=temp;
 	}
+	/////////////////////////
 	while (option != 4){
-	if (option == 3){
-	    System.out.println("Which stock would you like to buy/sell? ");
-	    view(newe);
+	    if (option == 3){
+		int sto = 0;
+		System.out.println("Which stock would you like to buy/sell? ");
+		view(newe);
 	    	try{
-	    temp =  Integer.parseInt( in.readLine() );
-	}
-	catch ( IOException e ) { }
+		    temp =  Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
 		if (temp < newe.size() && temp  > -1){
-		option= temp;
-	    }
-	    System.out.println("how much? (negative for selling)");
-	    	try{
-	    temp =  Integer.parseInt( in.readLine() );
-	}
-	catch ( IOException e ) { }
+		    sto = temp;
+		}
+		System.out.println("You have Chosen " + newe.get(sto).getName());
+		System.out.println("how much? (negative for selling)");
+		try{
+		    temp =  Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
 		num = temp;
-	    if (num > 0){
-		for (int i = 0; i < newe.size()-1; i++){
-		    if (option == (i +1 )){
-			if (pl.getDol() > newe.get(i).getCurVal() * num){
-			    newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
-			    pl.setDol(pl.getDol() - (newe.get(i).getCurVal() * num));
-			}else{
-				System.out.println("not enough $");
-			}
+		int i;
+		i = sto;
+		if (num > 0){
+	      
+		    if (pl.getDol() > newe.get(i).getCurVal() * num){
+			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
+			pl.setDol(pl.getDol() - (newe.get(i).getCurVal() * num));
+		    }else{
+			System.out.println("not enough $");
 		    }
-		}
-	    }else{
-		for (int i = 0; i < newe.size()-1; i++){
-		    if (option == (i +1 )){
-			if (newe.get(i).getAmtOwned() > num){
-			    newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
-			    pl.setDol(pl.getDol() + (newe.get(i).getCurVal() * num));
-			}else{
-			    System.out.println("not enough stock to sell");
-			}
+		}else{
+		    if (newe.get(i).getAmtOwned() > num){
+			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
+			pl.setDol(pl.getDol() + (newe.get(i).getCurVal() * num));
+		    }else{
+			System.out.println("not enough stock to sell");
 		    }
 		}
 	    }
-	}
+	    if (option == 5){
+		System.out.println("Your Balance is: " + pl.getDol());
+		for (Stock a:newe){
+		    if( a.getAmtOwned() > 0){
+			System.out.println("you own " + a.getAmtOwned() +  " of " + a.getName());
+		    }
+		}
+	    }
 	
-      
-		System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back");
-			try{
-	    temp =  Integer.parseInt( in.readLine() );
+	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned");
+	    try{
+		temp =  Integer.parseInt( in.readLine() );
+	    }
+	    catch ( IOException e ) { }
+	    if (temp < 6 && temp > 0){
+		option= temp;
 	}
-	catch ( IOException e ) { }
-	if (temp < 5 && temp > 0){
-	    option= temp;
 	}
-}
     }
-}
-	
+}	
 	    
 	    
 	    
