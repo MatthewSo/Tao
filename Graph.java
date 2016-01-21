@@ -52,7 +52,7 @@ public class Graph{
 
     public void bucketUp(){
 	double curr;
-	for (int i=0;i<values.length;i++){
+	for (int i=0;i< matrix.length;i++){
 	    curr = values[i] - min;
 	    double mod = curr % bucket;
 	    int placement = (int)((curr-mod)/bucket);
@@ -62,7 +62,7 @@ public class Graph{
 
     public void scale(){
 	findMinMax(prices);
-	bucket = (max-min)/15;
+	bucket = (max-min)/14;
     }
 
     public void findMinMax(ArrayList<Double> al){
@@ -97,7 +97,7 @@ public class Graph{
     public static void main(String[] args){
 	ArrayList<Double> aList = new ArrayList<Double>();
 	for (int i = 0; i < 100; i++){
-	    aList.add(100.0 + i);}
+	    aList.add(100.0 * Math.random() + i);}
 	Stock i = new Stock("g",1.1,1.1,1.1,aList,1.1);
 	i.setPrices(aList);
 	Graph testi = new Graph(i);
