@@ -1,4 +1,4 @@
 This is how you launch
 open terminal
-Complile ___.java with javac ___.java
-run with java ______
+Complile Main.java with javac Main.java
+run with java Main
