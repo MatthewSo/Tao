@@ -9,8 +9,12 @@ public class Stock{
     protected  String name; 
     protected int amtOwned;
     protected ArrayList<Double> prices;
+    protected ArrayList<Headline> heads;
+    protected ArrayList<String> nouns;
+    protected ArrayList<String> verbs;
+    
 
-    public Stock(String nm, double cV, double vol, double mom, ArrayList p, double mV ){
+    public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV, ArrayList<String> n, ArrayList<String v){
 	name = nm;
 	curVal = cV;
 	volatility = vol;
@@ -18,6 +22,9 @@ public class Stock{
 	prices = p;
 	momVol = mV;
 	amtOwned = 0;
+	heads = h;
+	for(
+	Headline.generate(
     }
     public int getAmtOwned(){
  return amtOwned;}
@@ -28,6 +35,7 @@ public class Stock{
     public double getMomVol(){
 	return momVol;
     }
+    public Array
     public double getVolatility(){
 	return volatility;
     }
@@ -73,7 +81,7 @@ public class Stock{
 	double oldPrice = curVal;
 	double  newPrice =curVal;
 	ArrayList<Double> weekly = new ArrayList<Double>();
-	for(int i = 0; i < 7; i++){
+	for(int i = 0; i < 1; i++){
 	    oldPrice= newPrice;
 	    double rnd = Math.random();
 

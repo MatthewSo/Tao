@@ -56,10 +56,15 @@ public class Market{
 		}
 		System.out.println("You have Chosen " + newe.get(sto).getName());
 		System.out.println("how much? (negative for selling)");
+		String foo = "0";
 		try{
-		    temp =  Integer.parseInt( in.readLine() );
+		    foo = in.readLine();
 		}
-		catch ( IOException e ) { }
+		catch ( Exception e ) { }
+		try{
+		    temp =  Integer.parseInt( foo );
+		}
+		catch (Exception e ) { }
 		num = temp;
 		int i;
 		i = sto;
