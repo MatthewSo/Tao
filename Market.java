@@ -23,7 +23,7 @@ public class Market{
     public static void view(ArrayList<Stock> st){
 	for(int i = 0; i < st.size(); i++){
 	    Stock a = st.get(i);
-	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() + "\n");
+	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() +"|" +  a.getChangeAmount() + "\n");
 	}
     }
         public static void viewXTRA(ArrayList<Stock> st){
@@ -40,7 +40,7 @@ public class Market{
 	int num =0;
 	int temp = 0;
 
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress ");
+	System.out.println("select an option\n [1]Sort by price\n [2]Sort by change percent \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress ");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
@@ -138,7 +138,8 @@ public class Market{
 		    newe.get(i).setMomentum(numb);
 		}
 	    }
-	
+	     
+	     view(newe);
 	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
