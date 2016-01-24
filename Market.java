@@ -16,7 +16,7 @@ public class Market{
     public Market(Player pl, ArrayList<Stock> st){
 	this.pl =pl;
 	stocks = st;
-		isr = new InputStreamReader( System.in );
+        isr = new InputStreamReader( System.in );
 	in = new BufferedReader( isr );
     }
     
@@ -50,16 +50,15 @@ public class Market{
 	}
 	/////////////////////////
 	while (option != 4){
-	    System.out.println(pl);
 	    int rando= (int)(Math.random() * newe.size());
 	    Headline header = newe.get(rando).getRandoHead();
 	    Stock headerstock = newe.get(rando);
 	    System.out.println(header);
-	    if (option == 1){
+	     if (option == 1){
 		newe = viewByPrice(newe);
 		view(newe);
 	    }
-	    else if (option == 2){
+	     else if (option == 2){
 		newe = viewByChange(newe);
 		view(newe);
 	    }
@@ -140,7 +139,7 @@ public class Market{
 		}
 	    }
 	
-	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress \n [7]Change momentum test ");
+	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
 	    }
