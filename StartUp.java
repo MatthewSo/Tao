@@ -4,6 +4,9 @@ import java.util.*;
  
 public class StartUp extends Stock{
 
+    StartUp(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV, ArrayList<String> n, ArrayList<String> v, ArrayList<Double> w, ArrayList<Boolean> cm){
+	super( nm, cV, vol, mom, p,mV,n,v,w,cm);}
+
      public ArrayList<Double> progress(){
 	double oldPrice = curVal;
 	double  newPrice =curVal;
