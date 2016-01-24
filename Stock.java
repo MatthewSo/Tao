@@ -14,6 +14,7 @@ public class Stock{
     protected ArrayList<String> verbs= new ArrayList<String>();
     protected ArrayList<Double> ws= new ArrayList<Double>();
     protected ArrayList<Boolean> cms = new ArrayList<Boolean>();
+    private double changeAmount;
     
 
     public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV){
@@ -56,7 +57,9 @@ public class Stock{
 	int random =(int)( Math.random()*(heads.size()));
 	return heads.get(random);
     }
-	
+
+    public double getChangeAmount(){
+	return changeAmount;}
 		
     public int getAmtOwned(){
  return amtOwned;}
