@@ -8,7 +8,8 @@ public class Player{
     public Player(String n, String d, double m){
 	name = n;
 	difficulty = d;
-	money = m;}
+	money = m;
+	history.addPrice(money);}
     
     public double getDol(){
 	return money;}
