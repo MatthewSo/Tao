@@ -3,21 +3,23 @@ import java.io.*;
 public class Main{
     public static void main(String [] args){
     ArrayList<Stock> stocks = new ArrayList<Stock>();
-     ArrayList<Double> list1 = new ArrayList<Double>();
+    //create Google
+    ArrayList<Double> list1 = new ArrayList<Double>();//list for prices
      ArrayList<String> gverbs = new ArrayList<String>(); gverbs.add("dies"); gverbs.add("Does extremely Well"); gverbs.add("Shuts Down unexpecdelty");
      ArrayList<String> gnouns = new ArrayList<String>(); gnouns.add("android"); gnouns.add("Nexus"); gnouns.add("Gmail");
-     ArrayList<Double> gw = new ArrayList<Double>(); gw.add(-12.0); gw.add(15.0); gw.add(-20.0);
+     ArrayList<Double> gw = new ArrayList<Double>(); gw.add(-1.0); gw.add(0.50); gw.add(-2.00);
      ArrayList<Boolean> gcm = new ArrayList<Boolean>(); gcm.add(false); gcm.add(false); gcm.add(true);
     list1.add(700.0);
     list1.add(800.0);
     list1.add(750.0);
     list1.add(720.0);
-    Stock goog = new Stock("Google",700.0,0.8,2,list1,1.0,gnouns,gverbs,gw,gcm);
-    stocks.add(goog);
+    Stock goog = new Stock("Google",700.0,0.8,2,list1,1.0,gnouns,gverbs,gw,gcm);//construct
+    stocks.add(goog);//add to main list
+    //create apple
     ArrayList<Double> list2 = new ArrayList<Double>();
     ArrayList<String> averbs = new ArrayList<String>(); averbs.add("crashes"); averbs.add("sells a trillion units"); averbs.add("releases without a 3.5mm port");
     ArrayList<String> anouns = new ArrayList<String>(); anouns.add("Iwatch"); anouns.add("Mac"); anouns.add("iPhone");
-    ArrayList<Double> aw = new ArrayList<Double>(); aw.add(-12.0); aw.add(35.0); aw.add(-20.0);
+    ArrayList<Double> aw = new ArrayList<Double>(); aw.add(-1.20); aw.add(5.0); aw.add(-2.00);
     ArrayList<Boolean> acm = new ArrayList<Boolean>(); acm.add(false); acm.add(true); acm.add(false);
     list2.add(70.0);
     list2.add(80.0);
