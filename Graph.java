@@ -1,7 +1,12 @@
 import java.util.*;
 
 public class Graph{
-	
+    public static  double rounder(double u){
+	int temp = (int)(u *100);
+	double ret = temp/100.0;
+	return ret;
+    }
+    
     private Stock stock;
     private ArrayList<Double> prices;	
     private double[][] matrix;
@@ -90,7 +95,7 @@ public class Graph{
 	    }
 	    ret += ("") + "\n";
 	}
-	ret += ("Max Value: " + max+" Min Value: " + min) +"\n";
+	ret += ("Max Value: " + rounder(max)+" Min Value: " +rounder(min)) +"\n";
 	return ret;
     }
     
