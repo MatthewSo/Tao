@@ -195,7 +195,7 @@ public class Main{
     list7.add(31.3);
     list7.add(34.5);
     list7.add(31.2);
-    StartUp pied = new StartUp("Pied Piper",31.3,3,.2,list6,2.5,pinouns,piverbs,piw,picm);//construct
+    StartUp pied = new StartUp("Pied Piper",31.3,3,.2,list7,2.5,pinouns,piverbs,piw,picm);//construct
     stocks.add(pied);//add to main list
 
     //

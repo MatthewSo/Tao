@@ -1,15 +1,9 @@
 
    import java.util.*;
 public class Competitor extends Stock{
-<<<<<<< HEAD
-    //new constructor
-    public Competitor(String nm, double cV, double vol, double mom, ArrayList p, double mV){	
-	super(nm,cV,vol,mom,p, mV);}
-=======
     Competitor(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV, ArrayList<String> n, ArrayList<String> v, ArrayList<Double> w, ArrayList<Boolean> cm){
 	super( nm, cV, vol, mom, p,mV,n,v,w,cm);}
 
->>>>>>> 946fac1e3c0683a9cd003bb5395506971d506c07
     //updated StartUp progress
         public ArrayList<Double> progress( Stock other){
 	double oldPrice = curVal;

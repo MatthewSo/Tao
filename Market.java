@@ -7,7 +7,11 @@ public class Market{
     private InputStreamReader isr;
     private BufferedReader in;
     
-
+    public static  double rounder(double u){
+	int temp = (int)(u *100);
+	double ret = temp/100.0;
+	return ret;
+    }
     public Market(){
 	pl = new Player("Max","Easy",1000.0);
 	stocks = new ArrayList<Stock>();
@@ -24,13 +28,13 @@ public class Market{
     public static void view(ArrayList<Stock> st){
 	for(int i = 0; i < st.size(); i++){
 	    Stock a = st.get(i);
-	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() +"|" +  a.getChangeAmount() + "\n");
+	    System.out.println("[" + i + "]" + a.getName() + "|" + rounder(a.getCurVal()) +"|" +  rounder(a.getChangeAmount()) + "\n");
 	}
     }
         public static void viewXTRA(ArrayList<Stock> st){
 	for(int i = 0; i < st.size(); i++){
 	    Stock a = st.get(i);
-	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() + "\n" +a);
+	    System.out.println("[" + i + "]" + a.getName() + "|" + rounder(a.getCurVal()) + "\n" +a);
 	}
     }
 
@@ -103,6 +107,18 @@ public class Market{
 			System.out.println("not enough $");
 		    }
 		}else{
+		    		    
+		    System.out.println("how much?");
+		    //  String foo = "0";
+		    //   try{
+			//	foo = in.readLine();
+			// }
+		    //catch ( Exception e ) { }
+		    try{
+			temp =  Integer.parseInt(in.readLine() );
+		    }
+		    catch (IOException e ) { }
+		    num = temp;
 		    int i;
 		    i = sto;
 		    if (newe.get(i).getAmtOwned() > num){
@@ -188,22 +204,21 @@ public void run(){
 	for (int i =0; i < newe.size(); i++){
 	    //if (newe.get(i) instanceof Competitor){
 		    
-	    // if (newe.get(i).getName() == "bp"|| newe.get(i).getName() == "Apple"){
-	    //	newe.get(i).progress(newe.get(i+1));
-	    //   }
-	    //  else if (newe.get(i).getName() == "shell"|| newe.get(i).getName() == "Google"){
-	    //		newe.get(i).progress(newe.get(i-1));
-	    //	    }
+	    //	if (newe.get(i).getName() == "bp"|| newe.get(i).getName() == "Apple"){
+		    //	    newe.get(i).progress(newe.get(i+1));
 	    //	}
-	    //	else{
-	    newe.get(i).progress();
-	    //	}
+	    //	else if (newe.get(i).getName() == "shell"|| newe.get(i).getName() == "Google"){
+		    //	    newe.get(i).progress(newe.get(i-1));
+	    //		}
+	    //    }
+	//	    else{
+		newe.get(i).progress();
 	}
+	
 	
     }
 }
-    // System.out.println("your lifetime earnings report " + pl);
-
+  
    
 
     public static ArrayList<Stock> viewByPrice( ArrayList<Stock> st ) {
