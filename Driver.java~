@@ -1,9 +1,0 @@
-import java.util.*      ;
-public class Driver{
-    private ArrayList<Doubl
-    private Stock stock1 = new Stock(;
-    private int difficulty = 0;
-    public void chooseDifficulty(int i){
-	difficulty = i;
-    }
-    public void buy
