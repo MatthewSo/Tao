@@ -6,6 +6,7 @@ public class Market{
     private ArrayList<Stock> stocks;
     private InputStreamReader isr;
     private BufferedReader in;
+    
 
     public Market(){
 	pl = new Player("Max","Easy",1000.0);
@@ -32,15 +33,15 @@ public class Market{
 	    System.out.println("[" + i + "]" + a.getName() + "|" + a.getCurVal() + "\n" +a);
 	}
     }
-	
+
+   
     public void buy(){
 	ArrayList<Stock> newe = this.stocks;
 	view(newe);
 	int option = 0;
 	int num =0;
 	int temp = 0;
-
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by change percent \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress ");
+	System.out.println("select an option\n [1]Sort by price\n [2]Sort by change percent \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
@@ -50,17 +51,16 @@ public class Market{
 	}
 	/////////////////////////
 	while (option != 4){
-	    int rando= (int)(Math.random() * newe.size());
-	    Headline header = newe.get(rando).getRandoHead();
-	    Stock headerstock = newe.get(rando);
-	    System.out.println(header);
+
 	     if (option == 1){
 		newe = viewByPrice(newe);
-		view(newe);
+		viewXTRA(newe);
+		break;
 	    }
 	     else if (option == 2){
 		newe = viewByChange(newe);
-		view(newe);
+		viewXTRA(newe);
+		break;
 	    }
 	    else if (option == 3){
 		int sto = 0;
@@ -74,20 +74,27 @@ public class Market{
 		    sto = temp;
 		}
 		System.out.println("You have Chosen " + newe.get(sto).getName());
-		System.out.println("how much? (negative for selling)");
-		String foo = "0";
+		System.out.println("[1]buy or [2]sell?");
+		int b = 0;
 		try{
-		    foo = in.readLine();
+		    b =  Integer.parseInt( in.readLine() );
 		}
-		catch ( Exception e ) { }
-		try{
-		    temp =  Integer.parseInt( foo );
-		}
-		catch (Exception e ) { }
-		num = temp;
-		int i;
-		i = sto;
-		if (num > 0){
+		catch ( IOException e ) { }
+		if ( b == 1){
+		    
+		    System.out.println("how much?");
+		    //  String foo = "0";
+		    //   try{
+			//	foo = in.readLine();
+			// }
+		    //catch ( Exception e ) { }
+		    try{
+			temp =  Integer.parseInt(in.readLine() );
+		    }
+		    catch (IOException e ) { }
+		    num = temp;
+		    int i;
+		    i = sto;
 	      
 		    if (pl.getDol() > newe.get(i).getCurVal() * num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
@@ -96,6 +103,8 @@ public class Market{
 			System.out.println("not enough $");
 		    }
 		}else{
+		    int i;
+		    i = sto;
 		    if (newe.get(i).getAmtOwned() > num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
 			pl.newWorth(pl.getDol() + (newe.get(i).getCurVal() * num));
@@ -103,6 +112,7 @@ public class Market{
 			System.out.println("not enough stock to sell");
 		    }
 		}
+		break;
 	    }
 	    else if (option == 5){
 		System.out.println("Your Balance is: " + pl.getDol());
@@ -112,33 +122,8 @@ public class Market{
 			System.out.println("you own " + a.getAmtOwned() +  " of " + a.getName());
 		    }
 		}
-	    }
-	    else if (option == 6){
-		if (header.changesMomentum){
-		    headerstock.setMomentum(headerstock.getMomentum() + (header.worth/100.0)*(headerstock.getCurVal()));
-			}else{
-		    headerstock.setCurVal(headerstock.getCurVal() + (header.worth/100 * headerstock.getMomentum()));
-		}
-				    
-		for (int i =0; i < newe.size(); i++){
-		    newe.get(i).progress();
-		}
-
-		    
-		
-	    }
-	    else if (option == 7){
-		double numb = 0;
-		for (int  i =0; i < newe.size(); i++){
-		    System.out.println("set momentum for " + newe.get(i).getName() +" ");
-		    try{
-			numb =  Double.parseDouble( in.readLine() );
-		    }
-		    catch ( IOException e ) { }
-		    newe.get(i).setMomentum(numb);
-		}
-	    }
-	     
+		break;
+	    }		    
 	     view(newe);
 	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress");
 	    try{
@@ -147,10 +132,79 @@ public class Market{
 	    catch ( IOException e ) { }
 	    if ( temp > 0){
 		option= temp;
+	    }
 	}
+    }
+	
+public void run(){
+    while(true){
+	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
+	int temp = 0;
+	try{
+	    temp =  Integer.parseInt( in.readLine() );
+	}
+	catch ( IOException e ) { }
+	//////////
+	int option = 0;
+	if ( temp > 0){
+	    option= temp;
+	}
+	ArrayList<Stock> newe = this.stocks;
+	while (option != 3){
+	    if (option == 1){
+		buy();
+	    }else if (option == 2){
+		System.out.println("Your Balance is: " + pl.getDol());
+		System.out.println(pl);
+		for (Stock a:newe){
+		    if( a.getAmtOwned() > 0){
+			System.out.println("you own " + a.getAmtOwned() +  " of " + a.getName());
+		    }
+		
+		}
+	    }
+	    System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
+	    try{
+		temp =  Integer.parseInt( in.readLine() );
+	    }
+	    catch ( IOException e ) { }
+	    //////////
+	    if ( temp > 0){
+		option= temp;
+	    }
+	}
+    
+	int rando= (int)(Math.random() * newe.size());
+	Headline header = newe.get(rando).getRandoHead();
+	Stock headerstock = newe.get(rando);
+	System.out.println(header);
+
+	if (header.changesMomentum){
+	    headerstock.setMomentum(headerstock.getMomentum() + (header.worth/100.0)*(headerstock.getCurVal()));
+	}else{
+	    headerstock.setCurVal(headerstock.getCurVal() + (header.worth/100 * headerstock.getMomentum()));
+	}
+				    
+	for (int i =0; i < newe.size(); i++){
+	    //if (newe.get(i) instanceof Competitor){
+		    
+	    // if (newe.get(i).getName() == "bp"|| newe.get(i).getName() == "Apple"){
+	    //	newe.get(i).progress(newe.get(i+1));
+	    //   }
+	    //  else if (newe.get(i).getName() == "shell"|| newe.get(i).getName() == "Google"){
+	    //		newe.get(i).progress(newe.get(i-1));
+	    //	    }
+	    //	}
+	    //	else{
+	    newe.get(i).progress();
+	    //	}
 	}
 	
     }
+}
+    // System.out.println("your lifetime earnings report " + pl);
+
+   
 
     public static ArrayList<Stock> viewByPrice( ArrayList<Stock> st ) {
 	Stock first;

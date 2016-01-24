@@ -29,6 +29,6 @@ public class Main{
     stocks.add(aapl);
     Player pl = new Player("Max","Easy",1000.0);
     Market m = new Market (pl, stocks);
-    m.buy();
+    m.run();
     }
 }
