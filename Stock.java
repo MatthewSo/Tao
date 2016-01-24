@@ -12,6 +12,7 @@ public class Stock{
     // protected ArrayList<Headline> heads;
     protected ArrayList<String> nouns;
     protected ArrayList<String> verbs;
+    private double changeAmount;
     
 
     public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV){// ArrayList<String> n, ArrayList<String v){
@@ -23,6 +24,8 @@ public class Stock{
 	momVol = mV;
 	amtOwned = 0;
     }
+    public double getChangeAmount(){
+	return changeAmount;}
     public int getAmtOwned(){
  return amtOwned;}
     public int setAmtOwned(int u){
@@ -86,7 +89,6 @@ public class Stock{
 
 	    double changePercent = volatility * rnd;
 	    double newrand = (Math.random() * 10) -5;
-	    double changeAmount;
 	    if ( newrand >= momentum){
 		changeAmount = oldPrice * (-1 * changePercent/100);
 		momentum += (-1 * momVol * changePercent/1000);

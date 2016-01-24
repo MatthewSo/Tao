@@ -121,8 +121,37 @@ public class Market{
 		option= temp;
 	}
 	}
+	
     }
-}	
+
+    public static void viewByPrice( ArrayList<Stock> st ) {
+	Stock first;
+	Stock second;
+	for(int x = 0; x < st.size() - 1; x ++){
+	for (int i = (st.size() - 1); i > 0 ; i--){
+	    first = st.get(i - 1);
+	    second = st.get(i);
+	    if (first.getCurVal() > (second.getCurVal())){
+		st.set(i, first);
+		st.set((i - 1),second);}
+	}}
+	System.out.println(st);}
+    public static void viewByChange( ArrayList<Stock> st ) {
+	Stock first;
+	Stock second;
+	for(int x = 0; x < st.size() - 1; x ++){
+	for (int i = (st.size() - 1); i > 0 ; i--){
+	    first = st.get(i - 1);
+	    second = st.get(i);
+	    if (first.getChangeAmount() > (second.getChangeAmount())){
+		st.set(i, first);
+		st.set((i - 1),second);}
+	}}
+	System.out.println(st);}
+	
+
+
+}
 	    
 	    
 	    
