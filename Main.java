@@ -24,7 +24,7 @@ public class Main{
      ArrayList<Boolean> gcm = new ArrayList<Boolean>();
      gcm.add(false);
      gcm.add(false);
-     gcm.add(true);
+     gcm.add(false);
     list1.add(700.0);
     list1.add(800.0);
     list1.add(750.0);
@@ -51,7 +51,7 @@ public class Main{
     aw.add(-2.00);
     ArrayList<Boolean> acm = new ArrayList<Boolean>();
     acm.add(false);
-    acm.add(true);
+    acm.add(false);
     acm.add(false);
     list2.add(90.0);
     list2.add(97.0);
@@ -67,7 +67,7 @@ public class Main{
      ArrayList<String> bpverbs = new ArrayList<String>();
      bpverbs.add("spills into the gulf.");
      bpverbs.add("explodes");
-     bpverbs.add("are down.");
+     bpverbs.add("are up.");
      ArrayList<String> bpnouns = new ArrayList<String>();
      bpnouns.add("BP oil");
      bpnouns.add("BP tanker");
@@ -75,7 +75,7 @@ public class Main{
      ArrayList<Double> bpw = new ArrayList<Double>();
      bpw.add(-3.0);
      bpw.add(-1.50);
-     bpw.add(-2.00);
+     bpw.add(2.250);
      ArrayList<Boolean> bpcm = new ArrayList<Boolean>();
      bpcm.add(true);
      bpcm.add(false);
@@ -130,7 +130,7 @@ public class Main{
     ArrayList<Double> tw = new ArrayList<Double>();
     tw.add(-1.0);
     tw.add(0.50);
-    tw.add(-2.00);
+    tw.add(-0.70);
     ArrayList<Boolean> tcm = new ArrayList<Boolean>();
     tcm.add(false);
     tcm.add(false);
@@ -139,7 +139,7 @@ public class Main{
     list3.add(14.3);
     list3.add(16.2);
     list3.add(17.5);
-    Independent twtr = new Independent("Twitter",17.5,2.0,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
+    Independent twtr = new Independent("Twitter",17.5,1.75,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
     stocks.add(twtr);//add to main list
 
 
@@ -151,7 +151,7 @@ public class Main{
     ArrayList<String> netverbs = new ArrayList<String>();
     netverbs.add("are cancelled");
     netverbs.add("sign new contract");
-    netverbs.add("greenlights more superhero TV shows.");
+    netverbs.add("greenlights more superhero TV shows");
     ArrayList<String> netnouns = new ArrayList<String>();
     netnouns.add("Netflix shows");
     netnouns.add("HBO and Netflix");
@@ -197,6 +197,33 @@ public class Main{
     list7.add(31.2);
     StartUp pied = new StartUp("Pied Piper",31.3,3,.2,list7,2.5,pinouns,piverbs,piw,picm);//construct
     stocks.add(pied);//add to main list
+
+
+
+    //create NYC SNOW DAY
+    ArrayList<Double> list8 = new ArrayList<Double>();//list for prices
+    ArrayList<String> snowverbs = new ArrayList<String>();
+    snowverbs.add("convinced his dad to shut schools");
+    snowverbs.add("are fashionable");
+    snowverbs.add("is comming");
+    ArrayList<String> snownouns = new ArrayList<String>();
+    snownouns.add("Dante DeBlasio");
+    snownouns.add("Bikinis");
+    snownouns.add("Winter");
+    ArrayList<Double> snoww = new ArrayList<Double>();
+    snoww.add(-2.0);
+    snoww.add(-1.0);
+    snoww.add(4.0);
+    ArrayList<Boolean> snowcm = new ArrayList<Boolean>();
+    snowcm.add(false);
+    snowcm.add(false);
+    snowcm.add(false);
+    list8.add(51.2);
+    list8.add(53.3);
+    list8.add(54.5);
+    list8.add(52.2);
+    StartUp snow = new StartUp("NYCSnowDay",52.4,2.5,0.1,list8,1.3,snownouns,snowverbs,snoww, snowcm);//construct
+    stocks.add(snow);//add to main list
 
     //
     
