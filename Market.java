@@ -40,7 +40,7 @@ public class Market{
 	int num =0;
 	int temp = 0;
 
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress \n [7]Change momentum test ");
+	System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned \n [6] progress ");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
@@ -55,7 +55,15 @@ public class Market{
 	    Headline header = newe.get(rando).getRandoHead();
 	    Stock headerstock = newe.get(rando);
 	    System.out.println(header);
-	    if (option == 3){
+	    if (option == 1){
+		newe = viewByPrice(newe);
+		view(newe);
+	    }
+	    else if (option == 2){
+		newe = viewByChange(newe);
+		view(newe);
+	    }
+	    else if (option == 3){
 		int sto = 0;
 		System.out.println("Which stock would you like to buy/sell? ");
 		viewXTRA(newe);
@@ -144,7 +152,7 @@ public class Market{
 	
     }
 
-    public static void viewByPrice( ArrayList<Stock> st ) {
+    public static ArrayList<Stock> viewByPrice( ArrayList<Stock> st ) {
 	Stock first;
 	Stock second;
 	for(int x = 0; x < st.size() - 1; x ++){
@@ -155,8 +163,8 @@ public class Market{
 		st.set(i, first);
 		st.set((i - 1),second);}
 	}}
-	System.out.println(st);}
-    public static void viewByChange( ArrayList<Stock> st ) {
+	return st;}
+    public static ArrayList<Stock> viewByChange( ArrayList<Stock> st ) {
 	Stock first;
 	Stock second;
 	for(int x = 0; x < st.size() - 1; x ++){
@@ -167,7 +175,7 @@ public class Market{
 		st.set(i, first);
 		st.set((i - 1),second);}
 	}}
-	System.out.println(st);}
+        return st;}
 	
 
 
