@@ -1,9 +1,0 @@
-public class Testnum2{
-    public static void  creatnum(double init, double volatility, double momentum){
-
-
-	
-    public static void main(String[] args){
-	creatnum(900,3.0,-0.0);
-    }
-}
