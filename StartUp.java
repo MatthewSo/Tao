@@ -8,7 +8,7 @@ public class StartUp extends Stock{
 	double oldPrice = curVal;
 	double  newPrice =curVal;
 	ArrayList<Double> weekly = new ArrayList<Double>();
-	for(int i = 0; i < 7; i++){
+	for(int i = 0; i < 1; i++){
 	    oldPrice= newPrice;
 	    double rnd = Math.random();
 

@@ -25,6 +25,7 @@ public class Player{
 	String retstr = "Current value : " + money; //" %change : " + ((curVal - prices.get(prices.size()))/100) + "\n";
 	Graph g = new Graph(history);
 	retstr += g.printGraph();
+	
 	return retstr;}
 
     public static void main(String args[]){
