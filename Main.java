@@ -15,7 +15,6 @@ public class Main{
     list2.add(80.0);
     list2.add(75.0);
     list2.add(72.0);
-    headline i = new headline(appl, iphonee)
     Stock stock2 = new Stock("AAPL",70.0,0.8,2,list2,1.0);
     stocks.add(stock2);
     Player pl = new Player("Max","Easy",1000.0);
