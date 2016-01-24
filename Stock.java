@@ -107,7 +107,10 @@ public class Stock{
 	double temp1 = momentum;
 	momentum = u;
 	return temp1;
+	
     }
+    public void addPrice(double d){
+	prices.add(d);}
     public ArrayList<Double> progress(){
 	double oldPrice = curVal;
 	double  newPrice =curVal;
