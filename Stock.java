@@ -9,12 +9,14 @@ public class Stock{
     protected  String name; 
     protected int amtOwned;
     protected ArrayList<Double> prices;
-    // protected ArrayList<Headline> heads;
-    protected ArrayList<String> nouns;
-    protected ArrayList<String> verbs;
+    protected ArrayList<Headline> heads= new ArrayList<Headline>();
+    protected ArrayList<String> nouns= new ArrayList<String>();
+    protected ArrayList<String> verbs= new ArrayList<String>();
+    protected ArrayList<Double> ws= new ArrayList<Double>();
+    protected ArrayList<Boolean> cms = new ArrayList<Boolean>();
     
 
-    public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV){// ArrayList<String> n, ArrayList<String v){
+    public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV){
 	name = nm;
 	curVal = cV;
 	volatility = vol;
@@ -23,6 +25,39 @@ public class Stock{
 	momVol = mV;
 	amtOwned = 0;
     }
+    // Precond Nouns,Verbs,ws,cms, are all the same length
+    //postcond; a stock with headlines
+    public Stock(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV, ArrayList<String> n, ArrayList<String> v, ArrayList<Double> w, ArrayList<Boolean> cm){
+	name = nm;
+	curVal = cV;
+	volatility = vol;
+	momentum = mom;
+	prices = p;
+	momVol = mV;
+	amtOwned = 0;
+	nouns = n;
+	verbs =v;
+	ws = w;
+	cms = cm;
+	GenerateHeadlines();
+    }
+	
+    public Headline  GenerateHeadline(String n,String v,double w, boolean cm){
+	Headline h = new Headline(n,v,w,cm,name);
+	return h;
+    }
+    public void  GenerateHeadlines(){
+	for(int i =0; i < verbs.size(); i++){
+	    Headline a = GenerateHeadline(nouns.get(i),verbs.get(i),ws.get(i),cms.get(i));
+	    heads.add(a);
+	}
+    }
+    public Headline getRandoHead(){
+	int random =(int)( Math.random()*(heads.size()));
+	return heads.get(random);
+    }
+	
+		
     public int getAmtOwned(){
  return amtOwned;}
     public int setAmtOwned(int u){
