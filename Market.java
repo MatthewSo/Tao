@@ -162,7 +162,7 @@ public class Market{
 public void run(){
     while(true){
 	
-	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire \n [5] view goals");
+	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n [2] view your balance/stocks owned \n [3] progress \n [4] retire \n [5] view goals");
 	int temp = 0;
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
@@ -222,7 +222,7 @@ public void run(){
 	    
 	    if (option == 4){
 		return;}
-	    System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
+	    System.out.println(" select an option\n [1] Buy and Sell and View stocks \n [2] view your balance/stocks owned \n [3] progress \n [4] retire \n [5] View Goals");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
 	    }
@@ -296,7 +296,8 @@ public void run(){
 
 }
 	    
-	    
+
+
 	    
 	    
 	    

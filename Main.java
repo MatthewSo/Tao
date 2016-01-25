@@ -234,7 +234,7 @@ public class Main{
 
     //
     
-    System.out.println("HOW TO PLAY THIS SIMULATION\n You have many options, view sell and buy stocks, view goals, and progress. Progress will progress the game by one week, changing all the stocks values. Goals can be met by having a certain amount of money in your inventory. To get more money, buy stocks and sell them for a profit. Make sure to sell at the right time so you can stay Rich! \nAccomplish all the goals to win!");
+    System.out.println("HOW TO PLAY THIS SIMULATION\n You have many options, view sell and buy stocks, view goals, and progress. Progress will progress the game by one week, changing all the stocks values. Goals can be met by having a certain amount of money in your inventory. To get more money, buy stocks and sell them for a profit. Make sure to sell at the right time so you can stay Rich! \nAccomplish all the goals to win!\n");
     Market m = new Market (pl, stocks);
     m.run();
     }
