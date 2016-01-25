@@ -1,4 +1,5 @@
 public class Headline{
+    //takes components of headline
     Headline(String n, String v, double w, boolean cM, String nm){
 	noun = n;
 	verb = v;
@@ -8,6 +9,7 @@ public class Headline{
 	genSentence();
 	name = nm;
     }
+    //instance variables
     String noun;
     String verb;
     String name;
@@ -15,6 +17,7 @@ public class Headline{
     boolean changesMomentum;
     String beginning;
     String sentence;
+    //randomly creates opening
     private void genBeginning(){
 	int rnd = (int)( Math.random() * 10);
 	if (rnd == 0){
@@ -38,8 +41,10 @@ public class Headline{
 	    beginning = "HAPPENING NOW:";}
 	if (rnd == 9){
 	    beginning = "EXCITING NEWS:";}}
+    //puts components together
     private void genSentence(){
 	sentence = beginning + " " + noun + " about to " + verb + ".";}
+    // returns sentence
     public String toString(){
 	return sentence;}
     

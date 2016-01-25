@@ -1,12 +1,13 @@
 import java.util.*;
 
 public class Graph{
+    //two get two floating points
     public static  double rounder(double u){
 	int temp = (int)(u *100);
 	double ret = temp/100.0;
 	return ret;
     }
-    
+    //instance variables
     private Stock stock;
     private ArrayList<Double> prices;	
     private double[][] matrix;
@@ -18,6 +19,7 @@ public class Graph{
     private double min;
     private double max;
 
+    //constructor takes a stock and extracts values
     public Graph(Stock stock){
 	this.stock = stock;
 	this.prices = stock.getPrices();
@@ -55,6 +57,9 @@ public class Graph{
 	}
     }
 
+
+
+    //Used to create correct scale + placement
     public void bucketUp(){
 	double curr;
 	for (int i=0;i< matrix.length;i++){
@@ -69,7 +74,7 @@ public class Graph{
 	findMinMax(prices);
 	bucket = (max-min)/14;
     }
-
+    //find top and bottom values
     public void findMinMax(ArrayList<Double> al){
 	max = al.get(0);
 	min = al.get(0);
@@ -82,9 +87,10 @@ public class Graph{
 	    }
 	}
     }
-
+    //print Graph
     public String printGraph(){
 	String ret = "\n";
+	//step through matrix and print right positions
 	for (int i=matrix[0].length-1; i>0;i--){
 	    for (int j=0;j<matrix.length;j++){
 		if (matrix[j][i] == 1){
@@ -98,7 +104,8 @@ public class Graph{
 	ret += ("Max Value: " + rounder(max)+" Min Value: " +rounder(min)) +"\n";
 	return ret;
     }
-    
+
+    //test functionality
     public static void main(String[] args){
 	ArrayList<Double> aList = new ArrayList<Double>();
 	for (int i = 0; i < 100; i++){
