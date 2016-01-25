@@ -29,9 +29,9 @@ public class Main{
      gw.add(4.50);
      gw.add(-2.50);
      ArrayList<Boolean> gcm = new ArrayList<Boolean>();
-     gcm.add(false);
-     gcm.add(false);
-     gcm.add(false);
+     gcm.add(true);
+     gcm.add(true);
+     gcm.add(true);
     list1.add(700.0);
     list1.add(800.0);
     list1.add(750.0);
@@ -57,9 +57,9 @@ public class Main{
     aw.add(15.0);
     aw.add(-10.00);
     ArrayList<Boolean> acm = new ArrayList<Boolean>();
-    acm.add(false);
-    acm.add(false);
-    acm.add(false);
+    acm.add(true);
+    acm.add(true);
+    acm.add(true);
     list2.add(90.0);
     list2.add(97.0);
     list2.add(102.0);
@@ -85,7 +85,7 @@ public class Main{
      bpw.add(10.000);
      ArrayList<Boolean> bpcm = new ArrayList<Boolean>();
      bpcm.add(true);
-     bpcm.add(false);
+     bpcm.add(true);
      bpcm.add(true);
      list4.add(28.0);
      list4.add(29.0);
@@ -114,7 +114,7 @@ public class Main{
     ArrayList<Boolean> shcm = new ArrayList<Boolean>();
     shcm.add(true);
     shcm.add(true);
-    shcm.add(false);
+    shcm.add(true);
     list5.add(40.0);
     list5.add(43.0);
     list5.add(42.0);
@@ -139,14 +139,14 @@ public class Main{
     tw.add(2.50);
     tw.add(2.70);
     ArrayList<Boolean> tcm = new ArrayList<Boolean>();
-    tcm.add(false);
-    tcm.add(false);
-    tcm.add(false);
+    tcm.add(true);
+    tcm.add(true);
+    tcm.add(true);
     list3.add(15.5);
     list3.add(14.3);
     list3.add(16.2);
     list3.add(17.5);
-    Independent twtr = new Independent("Twitter",17.5,8.75,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
+    Independent twtr = new Independent("Twitter",17.5,5.75,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
     stocks.add(twtr);//add to main list
 
 
@@ -168,9 +168,9 @@ public class Main{
     netw.add(2.50);
     netw.add(3.0);
     ArrayList<Boolean> netcm = new ArrayList<Boolean>();
-    netcm.add(false);
-    netcm.add(false);
-    netcm.add(false);
+    netcm.add(true);
+    netcm.add(true);
+    netcm.add(true);
     list6.add(100.54);
     list6.add(103.21);
     list6.add(99.53);
@@ -195,9 +195,9 @@ public class Main{
     piw.add(-5.0);
     piw.add(10.0);
     ArrayList<Boolean> picm = new ArrayList<Boolean>();
-    picm.add(false);
-    picm.add(false);
-    picm.add(false);
+    picm.add(true);
+    picm.add(true);
+    picm.add(true);
     list7.add(30.2);
     list7.add(31.3);
     list7.add(34.5);
@@ -218,13 +218,13 @@ public class Main{
     snownouns.add("Bikinis");
     snownouns.add("Winter");
     ArrayList<Double> snoww = new ArrayList<Double>();
-    snoww.add(-8.0);
-    snoww.add(-3.0);
-    snoww.add(10.0);
+    snoww.add(-1.0);
+    snoww.add(-1.0);
+    snoww.add(2.0);
     ArrayList<Boolean> snowcm = new ArrayList<Boolean>();
-    snowcm.add(false);
-    snowcm.add(false);
-    snowcm.add(false);
+    snowcm.add(true);
+    snowcm.add(true);
+    snowcm.add(true);
     list8.add(51.2);
     list8.add(53.3);
     list8.add(54.5);
