@@ -1,4 +1,5 @@
 public class Goal{
+
     
     double reach;
     boolean given;
@@ -20,11 +21,19 @@ public class Goal{
     public String reward(Player p){
 	if (p.getDol() > reach){
 	    p.newWorth(p.getDol() + value);
-	    	    given = true;
+	    given = true;
 	    return "You have just won $" + value + "for reaching $" + reach +".";
 
 	}
 	else{
 	    return "You have not reached $" + reach + ".";}
     }
+    public static void main(String[] args){
+	Player me = new Player("me","hello",23.3);
+	Goal test = new Goal(10.2,5);
+	System.out.println(me);
+	test.reward(me);
+	System.out.println(me);}
+    
+    
 }
