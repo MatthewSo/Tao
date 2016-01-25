@@ -23,17 +23,23 @@ Matt added Compeptitor class
 Matt bug-fixed graph.java
 Matt added Startup.
 Matt added Stock constructor.
+Max created a driver class in Driver.java
 
 Day 6
 
 Matt added amtOwned to stock
 Matt revised SubStock progress algorithms. Added momVol.
+Max split the driver.java into Market and Main in order to facilitate non static operations
+Max got the main method to work so the bones of the project were functioning
 
 Day 7
 Matt added Player class
 Matt revised Substock algorithms
 Matt debugged stock and graph cooperation
 Matt added amtOwned to stock and implentation
+Max added options to view player and other such stats
+Max Cleaned up the code, and brought it to be an order of n faster by eliminating needless for loops
+Max fixed a huge amount of erros
 
 Day 8
 We polished subclasses and balanced the algorithm
@@ -48,10 +54,24 @@ Matt fixed subclass constructors
 Matt researched and added new stocks.
 Matt solved menu errors for [2] and [4]
 Matt solved rounding errors in graph
+Max implemented headline in Market.Java
+Max impelemend Sort into the main methods
+Max brought the main method ever closer to completion by adding new menus and bug fixes
+Max fixed layout stuff like rounding and change percents
+Max added the ability for the player to see the stocks they own
+Max added the skeleton for headlines
+Max added goal fucntionality
 
 Day 10
 Matt corrected Max's grammar
 Matt notated code
+Max Added a lot of comments 
+Max added input santitation
+Max optimized the algorithim to fuction how we wanted
+Max fixed various bugs with menus and input
+Max updated the readme
+Max added comments to the main files
+Max added a couple of headlines and brought the code into its final stage
 
 
 Day 1000
