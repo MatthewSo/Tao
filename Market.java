@@ -106,7 +106,7 @@ public class Market{
 		    }else{
 			System.out.println("not enough $");
 		    }
-		}else{
+		}else if (b == 2){
 		    		    
 		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned());
 		    //  String foo = "0";
