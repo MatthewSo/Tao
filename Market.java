@@ -39,7 +39,16 @@ public class Market{
 	}
     }
 
-   
+    public void run10(){
+	for (int x = 0; x < 10; x++){
+		for (int i =0; i < stocks.size(); i++){
+		stocks.get(i).progress();
+		}
+	    }
+    }
+		
+	     
+	
     public void buy(){
 	ArrayList<Stock> newe = this.stocks;
 	view(newe);
@@ -238,14 +247,19 @@ public void run(){
 	int rando= (int)(Math.random() * newe.size());
 	Headline header = newe.get(rando).getRandoHead();
 	Stock headerstock = newe.get(rando);
-	System.out.println("Day " + counter);
-	System.out.println(header);
 
 	if (header.changesMomentum){
 	    headerstock.setMomentum(headerstock.getMomentum() + (header.worth/100.0)*(headerstock.getCurVal()));
 	}else{
 	    headerstock.setCurVal(headerstock.getCurVal() + (header.worth/100 * headerstock.getMomentum()));
 	}
+
+	rando= (int)(Math.random() * newe.size());
+        header = newe.get(rando).getRandoHead();
+	headerstock = newe.get(rando);
+	System.out.println("Day " + counter);
+	System.out.println(header);
+
 				    
 	for (int i =0; i < newe.size(); i++){
 	    //if (newe.get(i) instanceof Competitor){
