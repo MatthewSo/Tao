@@ -16,7 +16,7 @@ public class StartUp extends Stock{
 	    double rnd = Math.random();
 
 	    double changePercent = volatility * rnd;
-	    double newrand = (Math.random() * 10) -5;
+	    double newrand = (Math.random() * 11) -5;
 	    double changeAmount;
 	    //the momentum change is greater in Startups when it is positive
 	    if ( newrand >= momentum){

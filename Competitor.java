@@ -14,7 +14,7 @@ public class Competitor extends Stock{
 	    double rnd = Math.random();
 
 	    double changePercent = volatility * rnd;
-	    double newrand = (Math.random() * 10) -5;
+	    double newrand = (Math.random() * 11) -5;
 	    double changeAmount;
 	    //Set the other momentum to a new value based on the change in the current this val
 	    if ( newrand >= momentum){
