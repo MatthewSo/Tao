@@ -9,9 +9,9 @@ public class Main{
     Player pl = new Player("Max","Easy",1000.0);
     Goal one = new Goal(100,10);
     Goal two = new Goal(200,1100);
-    Goal three = new Goal(300,1250);
-    Goal four = new Goal(400,1500);
-    Goal five = new Goal(500,2000);
+    Goal three = new Goal(300,1750);
+    Goal four = new Goal(400,2500);
+    Goal five = new Goal(500,5000);
     pl.g.add(one);pl.g.add(two);pl.g.add(three);pl.g.add(four);pl.g.add(five);
     
     //create Google

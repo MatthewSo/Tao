@@ -81,7 +81,7 @@ public class Market{
 	     }
 	    else if (option == 3){
 		int sto = 0;
-		System.out.println("Which stock would you like to buy/sell?(your balance is)" + pl.getDol() + ")");
+		System.out.println("Which stock would you like to buy/sell?(your balance is)" + rounder(pl.getDol()) + ")");
 		view(newe);
 	    	try{
 		    temp =  Integer.parseInt( in.readLine() );
@@ -99,7 +99,7 @@ public class Market{
 		catch ( IOException e ) { }
 		if ( b == 1){
 		    
-		    System.out.println("how much?, you have " + pl.getDol() + " dollars and its price per stock is " + rounder(newe.get(sto).getCurVal()));
+		    System.out.println("how much?, you have " + rounder( pl.getDol()) + " dollars and its price per stock is " + rounder(newe.get(sto).getCurVal()));
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();
@@ -135,10 +135,10 @@ public class Market{
 		    num = temp;
 		    int i;
 		    i = sto;
-		    if (newe.get(i).getAmtOwned() > num){
+		    if (newe.get(i).getAmtOwned() >= num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
 			pl.newWorth(pl.getDol() + (newe.get(i).getCurVal() * num));
-			System.out.println("you sold " + num + " of " + newe.get(i).getName() + "your new balance is " + pl.getDol() + "!");
+			System.out.println("you sold " + num + " of " + newe.get(i).getName() + "your new balance is " + rounder(pl.getDol()) + "!");
 
 		    }else{
 			System.out.println("not enough stock to sell");
@@ -147,7 +147,7 @@ public class Market{
 		//	break;
 	    }
 	    else if (option == 5){
-		System.out.println("Your Balance is: " + pl.getDol());
+		System.out.println("Your Balance is: " +rounder( pl.getDol()));
 		System.out.println(pl);
 		for (Stock a:newe){
 		    if( a.getAmtOwned() > 0){
