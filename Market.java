@@ -73,14 +73,13 @@ public class Market{
 	/////////////////////////
 	while (option != 4){
 
-	     if (option == 1){
-		newe = viewByPrice(newe);
-		view(newe);
+	    newe = viewByPrice(newe);
+	    //view(newe);
 		//break;
 	    }
 	     else if (option == 2){
 		newe = viewByChange(newe);
-		view(newe);
+		//view(newe);
 		//break;
 	    }
 	     else if (option == 0){
