@@ -3,10 +3,10 @@ import java.util.*;
 
  
 public class StartUp extends Stock{
-
+    //Constructor uses superclass's constructor
     StartUp(String nm, double cV, double vol, double mom, ArrayList<Double> p, double mV, ArrayList<String> n, ArrayList<String> v, ArrayList<Double> w, ArrayList<Boolean> cm){
 	super( nm, cV, vol, mom, p,mV,n,v,w,cm);}
-
+    //progress gives favor to upward momentum
      public ArrayList<Double> progress(){
 	double oldPrice = curVal;
 	double  newPrice =curVal;
