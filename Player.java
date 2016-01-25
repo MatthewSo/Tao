@@ -5,6 +5,7 @@ public class Player{
     String difficulty;
     double money;
     ArrayList<Double> pastMoney = new ArrayList<Double>();
+    ArrayList<Goal> g = new ArrayList<Goal> ();
     public Player(String n, String d, double m){
 	name = n;
 	difficulty = d;

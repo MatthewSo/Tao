@@ -84,7 +84,7 @@ public class Graph{
     }
 
     public String printGraph(){
-	String ret = "";
+	String ret = "\n";
 	for (int i=matrix[0].length-1; i>0;i--){
 	    for (int j=0;j<matrix.length;j++){
 		if (matrix[j][i] == 1){

@@ -15,7 +15,9 @@ public class Goal{
     public String reward(Player p){
 	if (p.getDol() > reach){
 	    p.newWorth(p.getDol() + value);
+	    	    given = true;
 	    return "You have just won $" + value + "for reaching $" + reach +".";
+
 	}
 	else{
 	    return "You have not reached $" + reach + ".";}

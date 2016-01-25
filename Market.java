@@ -6,6 +6,7 @@ public class Market{
     private ArrayList<Stock> stocks;
     private InputStreamReader isr;
     private BufferedReader in;
+    private int counter= 0;
     
     public static  double rounder(double u){
 	int temp = (int)(u *100);
@@ -86,7 +87,7 @@ public class Market{
 		catch ( IOException e ) { }
 		if ( b == 1){
 		    
-		    System.out.println("how much?, you have " + pl.getDol() + " dollars");
+		    System.out.println("how much?, you have " + pl.getDol() + " dollars and its price per stock is" + newe.get(sto).getCurVal());
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();
@@ -103,12 +104,13 @@ public class Market{
 		    if (pl.getDol() > newe.get(i).getCurVal() * num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
 			pl.newWorth(pl.getDol() - (newe.get(i).getCurVal() * num));
+			System.out.println("you bought " + num + " of " + newe.get(i).getName() + "your new balance is " + pl.getDol() + "!");
 		    }else{
 			System.out.println("not enough $");
 		    }
 		}else if (b == 2){
 		    		    
-		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned());
+		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned() + "and its price per stock is" + newe.get(sto).getCurVal());
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();
@@ -124,6 +126,8 @@ public class Market{
 		    if (newe.get(i).getAmtOwned() > num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
 			pl.newWorth(pl.getDol() + (newe.get(i).getCurVal() * num));
+			System.out.println("you sold " + num + " of " + newe.get(i).getName() + "your new balance is " + pl.getDol() + "!");
+
 		    }else{
 			System.out.println("not enough stock to sell");
 		    }
@@ -154,6 +158,7 @@ public class Market{
 	
 public void run(){
     while(true){
+	
 	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
 	int temp = 0;
 	try{
@@ -197,6 +202,7 @@ public void run(){
 	int rando= (int)(Math.random() * newe.size());
 	Headline header = newe.get(rando).getRandoHead();
 	Stock headerstock = newe.get(rando);
+	System.out.println("Day " + counter);
 	System.out.println(header);
 
 	if (header.changesMomentum){
@@ -217,6 +223,7 @@ public void run(){
 	    //    }
 	//	    else{
 		newe.get(i).progress();
+		counter += 1;
 	}
 	
 	

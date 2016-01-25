@@ -20,7 +20,7 @@ public class Main{
      ArrayList<Double> gw = new ArrayList<Double>();
      gw.add(-1.0);
      gw.add(0.50);
-     gw.add(-2.00);
+     gw.add(-.50);
      ArrayList<Boolean> gcm = new ArrayList<Boolean>();
      gcm.add(false);
      gcm.add(false);
@@ -168,7 +168,7 @@ public class Main{
     list6.add(103.21);
     list6.add(99.53);
     list6.add(97.54);
-    Independent net = new Independent("Netflix",100.72,3,.0,list6,2.0,netnouns,netverbs,netw,netcm);//construct
+    Independent net = new Independent("Netflix",100.72,1.5,-.3,list6,2.0,netnouns,netverbs,netw,netcm);//construct
     stocks.add(net);//add to main list
 
     
