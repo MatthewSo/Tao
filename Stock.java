@@ -42,7 +42,11 @@ public class Stock{
 	cms = cm;
 	GenerateHeadlines();
     }
-	
+    public static  double rounder(double u){
+	int temp = (int)(u *100);
+	double ret = temp/100.0;
+	return ret;
+    }
     public Headline  GenerateHeadline(String n,String v,double w, boolean cm){
 	Headline h = new Headline(n,v,w,cm,name);
 	return h;
@@ -62,7 +66,7 @@ public class Stock{
 	return changeAmount;}
 		
     public int getAmtOwned(){
- return amtOwned;}
+	return amtOwned;}
     public int setAmtOwned(int u){
         int temp1 = amtOwned;
 	amtOwned = u;
@@ -142,7 +146,7 @@ public class Stock{
     }
     
     public String toString(){
-	String retstr = "Current value : " + curVal; //" %change : " + ((curVal - prices.get(prices.size()))/100) + "\n";
+	String retstr = "Current value : " +rounder( curVal); //" %change : " + ((curVal - prices.get(prices.size()))/100) + "\n";
 	Graph g = new Graph(this);
 	retstr += g.printGraph();
 	return retstr;
