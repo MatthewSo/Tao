@@ -68,7 +68,7 @@ public class Market{
 	    }
 	    else if (option == 3){
 		int sto = 0;
-		System.out.println("Which stock would you like to buy/sell? ");
+		System.out.println("Which stock would you like to buy/sell?(your balance is)" + pl.getDol() + ")");
 		viewXTRA(newe);
 	    	try{
 		    temp =  Integer.parseInt( in.readLine() );
@@ -86,7 +86,7 @@ public class Market{
 		catch ( IOException e ) { }
 		if ( b == 1){
 		    
-		    System.out.println("how much?");
+		    System.out.println("how much?, you have " + pl.getDol() + " dollars");
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();
@@ -108,7 +108,7 @@ public class Market{
 		    }
 		}else{
 		    		    
-		    System.out.println("how much?");
+		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned());
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();

@@ -28,3 +28,7 @@ Day 6
 
 Matt added amtOwned to stock
 Matt revised SubStock progress algorithms. Added momVol.
+
+Day 1000
+
+We finshied everything!
