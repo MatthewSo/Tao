@@ -6,20 +6,22 @@ public class Market{
     private ArrayList<Stock> stocks;
     private InputStreamReader isr;
     private BufferedReader in;
-    private int counter= 0;
+    private int counter= 0;//for days of the week
     
-    public static  double rounder(double u){
+    public static  double rounder(double u){// Static method to make our code look pretty
 	int temp = (int)(u *100);
 	double ret = temp/100.0;
 	return ret;
     }
+    //initzlize a new market, along with input methods
     public Market(){
 	pl = new Player("Max","Easy",1000.0);
 	stocks = new ArrayList<Stock>();
 		isr = new InputStreamReader( System.in );
 	in = new BufferedReader( isr );
     }
-    public Market(Player pl, ArrayList<Stock> st){
+    
+    public Market(Player pl, ArrayList<Stock> st){// constructor that we actually use
 	this.pl =pl;
 	stocks = st;
         isr = new InputStreamReader( System.in );
@@ -56,10 +58,15 @@ public class Market{
 	int num =0;
 	int temp = 0;
 	System.out.println("Select an option\n \n [0] View graphs\n [1] Sort by price\n [2] Sort by change percent \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance and stocks owned");
+	String fa = "0";
 	try{
-	    temp =  Integer.parseInt( in.readLine() );
+	    fa = in.readLine();
 	}
-	catch ( IOException e ) { }
+	catch ( Exception e ) { }
+	try{
+	    temp =  Integer.parseInt(fa);
+	}
+	catch (Exception e ) { }
 	if (temp > -1){
 	    option=temp;
 	}
@@ -83,32 +90,42 @@ public class Market{
 		int sto = 0;
 		System.out.println("Which stock would you like to buy/sell?(your balance is $" + rounder(pl.getDol()) + ")");
 		view(newe);
-	    	try{
-		    temp =  Integer.parseInt( in.readLine() );
+		String foooo = "0";
+		try{
+		    foooo = in.readLine();
 		}
-		catch ( IOException e ) { }
+		catch ( Exception e ) { }
+		try{
+		    temp =  Integer.parseInt(foooo);
+		}
+		catch (Exception e ) { }
 		if (temp < newe.size() && temp  > -1){
 		    sto = temp;
 		}
 		System.out.println("You have Chosen " + newe.get(sto).getName());
 		System.out.println("[1]Buy or [2]Sell?");
 		int b = 0;
+		String fooo = "0";
 		try{
-		    b =  Integer.parseInt( in.readLine() );
+		    fooo = in.readLine();
 		}
-		catch ( IOException e ) { }
+		catch ( Exception e ) { }
+		try{
+		    b =  Integer.parseInt(fooo);
+		}
+		catch (Exception e ) { }
 		if ( b == 1){
 		    
 		    System.out.println("How much? You have " + rounder( pl.getDol()) + " dollars and its price per stock is $" + rounder(newe.get(sto).getCurVal()));
-		    //  String foo = "0";
-		    //   try{
-			//	foo = in.readLine();
-			// }
-		    //catch ( Exception e ) { }
+		    String foo = "0";
 		    try{
-			temp =  Integer.parseInt(in.readLine() );
+			foo = in.readLine();
 		    }
-		    catch (IOException e ) { }
+		    catch ( Exception e ) { }
+		    try{
+			temp =  Integer.parseInt(foo);
+		    }
+		    catch (Exception e ) { }
 		    num = temp;
 		    int i;
 		    i = sto;
@@ -128,10 +145,15 @@ public class Market{
 			//	foo = in.readLine();
 			// }
 		    //catch ( Exception e ) { }
+		    String bar = "0";
 		    try{
-			temp =  Integer.parseInt(in.readLine() );
+			bar = in.readLine();
 		    }
-		    catch (IOException e ) { }
+		    catch ( Exception e ) { }
+		    try{
+			temp =  Integer.parseInt(bar);
+		    }
+		    catch (Exception e ) { }
 		    num = temp;
 		    int i;
 		    i = sto;
@@ -158,10 +180,15 @@ public class Market{
 	    }		    
 	     view(newe);
 	    System.out.println("Select an option\n [0] View Graphs \n [1] Sort by price\n [2] Sort by percent change \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance/stocks owned");
+	    String fooi = "0";
 	    try{
-		temp =  Integer.parseInt( in.readLine() );
+		fooi = in.readLine();
 	    }
-	    catch ( IOException e ) { }
+	    catch ( Exception e ) { }
+	    try{
+		temp =  Integer.parseInt(fooi);
+	    }
+	    catch (Exception e ) { }
 	    if ( temp > -1){
 		option= temp;
 	    }
@@ -173,10 +200,15 @@ public void run(){
 	
 	System.out.println(" Select an option\n [1] Buy and Sell and view stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View goals");
 	int temp = 0;
+	String foog = "0";
 	try{
-	    temp =  Integer.parseInt( in.readLine() );
+	    foog = in.readLine();
 	}
-	catch ( IOException e ) { }
+	catch ( Exception e ) { }
+	try{
+	    temp =  Integer.parseInt(foog);
+	}
+	catch (Exception e ) { }
 	//////////
 	int option = 0;
 	if ( temp > 0){
@@ -204,10 +236,16 @@ public void run(){
 		}
 		System.out.println("Cash in a goal? [1]Yes [2] No");
 		int temper = 0;
+		String fool = "0";
 		try{
-		    temper =  Integer.parseInt( in.readLine() );
+		    fool = in.readLine();
 		}
-		catch ( IOException e ) { }
+		catch ( Exception e ) { }
+		try{
+		    temper =  Integer.parseInt(fool);
+		}
+		catch (Exception e ) { }
+
 		if (temper == 1){
 		    System.out.println("Which goal?");
 		    num =1;
@@ -216,10 +254,15 @@ public void run(){
 			num ++;
 		    }
 		    int temperal = 1;
+		    String foom = "0";
 		    try{
-			temperal =  Integer.parseInt( in.readLine() );
+			foom = in.readLine();
 		    }
-		    catch ( IOException e ) { }
+		    catch ( Exception e ) { }
+		    try{
+			temperal =  Integer.parseInt(foom);
+		    }
+		    catch (Exception e ) { }
 		    pl.g.get(temperal -1 ).reward(pl);
 		}
 		else if (temper == 2){
@@ -232,10 +275,15 @@ public void run(){
 	    if (option == 4){
 		return;}
 	    System.out.println(" Select an option\n [1] Buy and Sell and View stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View Goals");
+	    String fooy = "0";
 	    try{
-		temp =  Integer.parseInt( in.readLine() );
+		fooy = in.readLine();
 	    }
-	    catch ( IOException e ) { }
+	    catch ( Exception e ) { }
+	    try{
+		temp =  Integer.parseInt(fooy);
+	    }
+	    catch (Exception e ) { }
 	    //////////
 	    if ( temp > 0){
 		option= temp;
@@ -264,17 +312,22 @@ public void run(){
 	for (int i =0; i < newe.size(); i++){
 	    //if (newe.get(i) instanceof Competitor){
 		    
-	    //	if (newe.get(i).getName() == "bp"|| newe.get(i).getName() == "Apple"){
-		    //	    newe.get(i).progress(newe.get(i+1));
-	    //	}
-	    //	else if (newe.get(i).getName() == "shell"|| newe.get(i).getName() == "Google"){
-		    //	    newe.get(i).progress(newe.get(i-1));
-	    //		}
-	    //    }
-	//	    else{
+	    // 	if (newe.get(i).getName() == "bp"|| newe.get(i).getName() == "Apple"){
+	    // 	    Competitor x = (Competitor)newe.get(i);
+	    // 	     x.progress(newe.get(i+1));
+	    // 	     newe.set(i,x);
+	    // 	}
+	    // 	else if (newe.get(i).getName() == "shell"|| newe.get(i).getName() == "Google"){
+	    // 	    Competitor x = (Competitor)newe.get(i);
+	    // 	    x.progress(newe.get(i-1));
+	    // 	    newe.set(i,x);
+	    // 	}
+	    // }
+	    // 	    else{
 		newe.get(i).progress();
 	}
 	counter += 7;
+	
 	
     }
 }
