@@ -72,7 +72,7 @@ public class Market{
 	}
 	/////////////////////////
 	while (option != 4){
-
+	    if (option == 1){
 	    newe = viewByPrice(newe);
 	    //view(newe);
 		//break;

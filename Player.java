@@ -8,7 +8,9 @@ public class Player{
     ArrayList<Double> pastMoney = new ArrayList<Double>();
     ArrayList<Goal> g = new ArrayList<Goal> ();
     //default constructor
-    public Player(double m){
+    public Player(String s, String r, double m){
+	name = s;
+	difficulty = r;
 	money = m;
 	history.addPrice(money);}
     //get and set for Money
