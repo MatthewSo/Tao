@@ -3,6 +3,11 @@ public class Goal{
     double reach;
     boolean given;
     double value;
+    public Goal(double v,double r){
+	value = v ;
+	given = false;
+	reach =r;
+    }
     public String toString()
     {
 	if (given == false){

@@ -3,16 +3,23 @@ import java.io.*;
 public class Main{
     public static void main(String [] args){
     ArrayList<Stock> stocks = new ArrayList<Stock>();
+    
 
-
-
+    //create Goals
+    Player pl = new Player("Max","Easy",1000.0);
+    Goal one = new Goal(100,1000);
+    Goal two = new Goal(200,1100);
+    Goal three = new Goal(300,1250);
+    Goal four = new Goal(400,1500);
+    Goal five = new Goal(500,2000);
+    pl.g.add(one);pl.g.add(two);pl.g.add(three);pl.g.add(four);pl.g.add(five);
     
     //create Google
     ArrayList<Double> list1 = new ArrayList<Double>();//list for prices
      ArrayList<String> gverbs = new ArrayList<String>();
-     gverbs.add("dies");
-     gverbs.add("Does extremely Well");
-     gverbs.add("Shuts Down unexpecdelty");
+     gverbs.add("die");
+     gverbs.add("Do extremely Well");
+     gverbs.add("Shut Down unexpecdelty");
      ArrayList<String> gnouns = new ArrayList<String>();
      gnouns.add("android");
      gnouns.add("Nexus");
@@ -29,7 +36,7 @@ public class Main{
     list1.add(800.0);
     list1.add(750.0);
     list1.add(720.0);
-    Competitor goog = new Competitor("Google",702.0,.75,.8,list1,.8,gnouns,gverbs,gw,gcm);//construct
+    Competitor goog = new Competitor("Google",702.0,3.75,.2,list1,.8,gnouns,gverbs,gw,gcm);//construct
     stocks.add(goog);//add to main list
 
 
@@ -38,9 +45,9 @@ public class Main{
     //create apple
     ArrayList<Double> list2 = new ArrayList<Double>();
     ArrayList<String> averbs = new ArrayList<String>();
-    averbs.add("crashes");
-    averbs.add("sells a trillion units");
-    averbs.add("releases without a 3.5mm port");
+    averbs.add("crash");
+    averbs.add("sell a trillion units");
+    averbs.add("release without a 3.5mm port");
     ArrayList<String> anouns = new ArrayList<String>();
     anouns.add("Iwatch");
     anouns.add("Mac");
@@ -57,7 +64,7 @@ public class Main{
     list2.add(97.0);
     list2.add(102.0);
     list2.add(101.0);
-    Competitor aapl = new Competitor("Apple",103.0,1.3,.85,list2,1.0,anouns,averbs,aw,acm);
+    Competitor aapl = new Competitor("Apple",103.0,6.5,.85,list2,1.0,anouns,averbs,aw,acm);
     stocks.add(aapl);
 
 
@@ -65,9 +72,9 @@ public class Main{
         //create BP
     ArrayList<Double> list4 = new ArrayList<Double>();//list for prices
      ArrayList<String> bpverbs = new ArrayList<String>();
-     bpverbs.add("spills into the gulf.");
-     bpverbs.add("explodes");
-     bpverbs.add("are up.");
+     bpverbs.add("spill into the gulf.");
+     bpverbs.add("explode");
+     bpverbs.add("be up.");
      ArrayList<String> bpnouns = new ArrayList<String>();
      bpnouns.add("BP oil");
      bpnouns.add("BP tanker");
@@ -84,7 +91,7 @@ public class Main{
      list4.add(29.0);
      list4.add(34.0);
      list4.add(31.0);
-     Competitor bp = new Competitor("BP",30.35,1.3,-0.2,list4,1.1,bpnouns,bpverbs,bpw,bpcm);//construct
+     Competitor bp = new Competitor("BP",30.35,6.5,-0.2,list4,1.1,bpnouns,bpverbs,bpw,bpcm);//construct
      stocks.add(bp);//add to main list
     
 
@@ -93,9 +100,9 @@ public class Main{
     //create Shell
     ArrayList<Double> list5 = new ArrayList<Double>();
     ArrayList<String> shverbs = new ArrayList<String>();
-    shverbs.add("creates green oil.");
-    shverbs.add("causes caner");
-    shverbs.add("donates to poor countries");
+    shverbs.add("create green oil.");
+    shverbs.add("cause caner");
+    shverbs.add("donate to poor countries");
     ArrayList<String> shnouns = new ArrayList<String>();
     shnouns.add("Shell");
     shnouns.add("Shell oil");
@@ -112,7 +119,7 @@ public class Main{
     list5.add(43.0);
     list5.add(42.0);
     list5.add(39.1);
-    Competitor shell = new Competitor("Shell",39.12,1.75,-.5,list5,1.0,shnouns,shverbs,shw,shcm);
+    Competitor shell = new Competitor("Shell",39.12,8.75,-.5,list5,1.0,shnouns,shverbs,shw,shcm);
     stocks.add(shell);
 
 
@@ -121,8 +128,8 @@ public class Main{
     ArrayList<Double> list3 = new ArrayList<Double>();//list for prices
     ArrayList<String> tverbs = new ArrayList<String>();
     tverbs.add("crash");
-    tverbs.add("is endorsed by Obama");
-    tverbs.add("tweets, 'this is a bad website #twitter #is #bad'");
+    tverbs.add("be endorsed by Obama");
+    tverbs.add("tweet, 'this is a bad website #twitter #is #bad'");
     ArrayList<String> tnouns = new ArrayList<String>();
     tnouns.add("Twitter servers");
     tnouns.add("Twitter");
@@ -139,7 +146,7 @@ public class Main{
     list3.add(14.3);
     list3.add(16.2);
     list3.add(17.5);
-    Independent twtr = new Independent("Twitter",17.5,1.75,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
+    Independent twtr = new Independent("Twitter",17.5,8.75,.5,list3,1.0,tnouns,tverbs,tw,tcm);//construct
     stocks.add(twtr);//add to main list
 
 
@@ -149,9 +156,9 @@ public class Main{
    //create Netflix
     ArrayList<Double> list6 = new ArrayList<Double>();//list for prices
     ArrayList<String> netverbs = new ArrayList<String>();
-    netverbs.add("are cancelled");
+    netverbs.add("be cancelled");
     netverbs.add("sign new contract");
-    netverbs.add("greenlights more superhero TV shows");
+    netverbs.add("greenlight more superhero TV shows");
     ArrayList<String> netnouns = new ArrayList<String>();
     netnouns.add("Netflix shows");
     netnouns.add("HBO and Netflix");
@@ -168,7 +175,7 @@ public class Main{
     list6.add(103.21);
     list6.add(99.53);
     list6.add(97.54);
-    Independent net = new Independent("Netflix",100.72,1.5,-.3,list6,2.0,netnouns,netverbs,netw,netcm);//construct
+    Independent net = new Independent("Netflix",100.72,7.5,-.3,list6,2.0,netnouns,netverbs,netw,netcm);//construct
     stocks.add(net);//add to main list
 
     
@@ -176,9 +183,9 @@ public class Main{
        //create Pied Piper
     ArrayList<Double> list7 = new ArrayList<Double>();//list for prices
     ArrayList<String> piverbs = new ArrayList<String>();
-    piverbs.add("is broken");
-    piverbs.add("are hacked");
-    piverbs.add("has a new algorithm");
+    piverbs.add("be broken");
+    piverbs.add("be hacked");
+    piverbs.add("unveil a new algorithm");
     ArrayList<String> pinouns = new ArrayList<String>();
     pinouns.add("Pied Piper's compression algorithm");
     pinouns.add("Pied Piper's servers");
@@ -195,7 +202,7 @@ public class Main{
     list7.add(31.3);
     list7.add(34.5);
     list7.add(31.2);
-    StartUp pied = new StartUp("Pied Piper",31.3,3,.2,list7,2.5,pinouns,piverbs,piw,picm);//construct
+    StartUp pied = new StartUp("Pied Piper",31.3,15,.2,list7,2.5,pinouns,piverbs,piw,picm);//construct
     stocks.add(pied);//add to main list
 
 
@@ -203,9 +210,9 @@ public class Main{
     //create NYC SNOW DAY
     ArrayList<Double> list8 = new ArrayList<Double>();//list for prices
     ArrayList<String> snowverbs = new ArrayList<String>();
-    snowverbs.add("convinced his dad to shut schools");
-    snowverbs.add("are fashionable");
-    snowverbs.add("is comming");
+    snowverbs.add("convince his dad to shut schools");
+    snowverbs.add("become fashionable");
+    snowverbs.add("come");
     ArrayList<String> snownouns = new ArrayList<String>();
     snownouns.add("Dante DeBlasio");
     snownouns.add("Bikinis");
@@ -222,12 +229,12 @@ public class Main{
     list8.add(53.3);
     list8.add(54.5);
     list8.add(52.2);
-    StartUp snow = new StartUp("NYCSnowDay",52.4,2.5,0.1,list8,1.3,snownouns,snowverbs,snoww, snowcm);//construct
+    StartUp snow = new StartUp("NYCSnowDay",52.4,12.5,0.1,list8,1.3,snownouns,snowverbs,snoww, snowcm);//construct
     stocks.add(snow);//add to main list
 
     //
     
-    Player pl = new Player("Max","Easy",1000.0);
+    System.out.println("HOW TO PLAY THIS SIMULATION\n You have many options, view sell and buy stocks, view goals, and progress. Progress will progress the game by one week, changing all the stocks values. Goals can be met by having a certain amount of money in your inventory. To get more money, buy stocks and sell them for a profit. Make sure to sell at the right time so you can stay Rich! \nAccomplish all the goals to win!");
     Market m = new Market (pl, stocks);
     m.run();
     }

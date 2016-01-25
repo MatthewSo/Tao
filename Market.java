@@ -46,12 +46,12 @@ public class Market{
 	int option = 0;
 	int num =0;
 	int temp = 0;
-	System.out.println("select an option\n [1]Sort by price\n [2]Sort by change percent \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance and stocks owned");
+	System.out.println("select an option\n \n [0]View graphs\n [1]Sort by price\n [2]Sort by change percent \n [3]Buy/sell a specific stock \n [4]Back \n [5]View your balance and stocks owned");
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
 	}
 	catch ( IOException e ) { }
-	if (temp > 0){
+	if (temp > -1){
 	    option=temp;
 	}
 	/////////////////////////
@@ -59,18 +59,21 @@ public class Market{
 
 	     if (option == 1){
 		newe = viewByPrice(newe);
-		viewXTRA(newe);
-		break;
+		view(newe);
+		//break;
 	    }
 	     else if (option == 2){
 		newe = viewByChange(newe);
-		viewXTRA(newe);
-		break;
+		view(newe);
+		//break;
 	    }
+	     else if (option == 0){
+		 viewXTRA(newe);
+	     }
 	    else if (option == 3){
 		int sto = 0;
 		System.out.println("Which stock would you like to buy/sell?(your balance is)" + pl.getDol() + ")");
-		viewXTRA(newe);
+		view(newe);
 	    	try{
 		    temp =  Integer.parseInt( in.readLine() );
 		}
@@ -104,13 +107,13 @@ public class Market{
 		    if (pl.getDol() > newe.get(i).getCurVal() * num){
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
 			pl.newWorth(pl.getDol() - (newe.get(i).getCurVal() * num));
-			System.out.println("you bought " + num + " of " + newe.get(i).getName() + "your new balance is " + pl.getDol() + "!");
+			System.out.println("you bought " + num + " of " + newe.get(i).getName() + " your new balance is " + pl.getDol() + "!");
 		    }else{
 			System.out.println("not enough $");
 		    }
 		}else if (b == 2){
 		    		    
-		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned() + "and its price per stock is" + newe.get(sto).getCurVal());
+		    System.out.println("how much?, you own " + newe.get(sto).getAmtOwned() + " and its price per stock is" + newe.get(sto).getCurVal());
 		    //  String foo = "0";
 		    //   try{
 			//	foo = in.readLine();
@@ -132,7 +135,7 @@ public class Market{
 			System.out.println("not enough stock to sell");
 		    }
 		}
-		break;
+		//	break;
 	    }
 	    else if (option == 5){
 		System.out.println("Your Balance is: " + pl.getDol());
@@ -142,15 +145,15 @@ public class Market{
 			System.out.println("you own " + a.getAmtOwned() +  " of " + a.getName());
 		    }
 		}
-		break;
+		//break;
 	    }		    
 	     view(newe);
-	    System.out.println("select an option\n [1]Sort by price\n [2]Sort by name \n [3] buy a specific stock \n [4] Back \n [5] view your balance/stocks owned \n [6] progress");
+	    System.out.println("select an option\n [0] View Graphs \n [1]Sort by price\n [2]Sort by percent change \n [3] buy/sell a specific stock \n [4] Back \n [5] view your balance/stocks owned");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
 	    }
 	    catch ( IOException e ) { }
-	    if ( temp > 0){
+	    if ( temp > -1){
 		option= temp;
 	    }
 	}
@@ -159,7 +162,7 @@ public class Market{
 public void run(){
     while(true){
 	
-	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
+	System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire \n [5] view goals");
 	int temp = 0;
 	try{
 	    temp =  Integer.parseInt( in.readLine() );
@@ -184,6 +187,39 @@ public void run(){
 		
 		}
 	    }
+	    else if (option == 5){
+		int num =1;
+		for (Goal g: pl.g){
+		    System.out.println("[" + num + "]" + g);
+		    num ++;
+		}
+		System.out.println("Cash in a goal? [1]Yes [2] No");
+		int temper = 0;
+		try{
+		    temper =  Integer.parseInt( in.readLine() );
+		}
+		catch ( IOException e ) { }
+		if (temper == 1){
+		    System.out.println("Which goal?");
+		    num =1;
+		    for (Goal g: pl.g){
+			System.out.println("[" + num + "]" + g);
+			num ++;
+		    }
+		    int temperal = 1;
+		    try{
+			temperal =  Integer.parseInt( in.readLine() );
+		    }
+		    catch ( IOException e ) { }
+		    pl.g.get(temperal).reward(pl);
+		}
+		else if (temper == 2){
+		    System.out.println("ok");
+		}
+	    }
+		    
+	   
+	    
 	    if (option == 4){
 		return;}
 	    System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
@@ -223,9 +259,8 @@ public void run(){
 	    //    }
 	//	    else{
 		newe.get(i).progress();
-		counter += 1;
 	}
-	
+	counter += 7;
 	
     }
 }

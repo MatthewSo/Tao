@@ -39,7 +39,7 @@ public class Headline{
 	if (rnd == 9){
 	    beginning = "EXCITING NEWS:";}}
     private void genSentence(){
-	sentence = beginning + " " + noun + " " + verb + ".";}
+	sentence = beginning + " " + noun + " about to " + verb + ".";}
     public String toString(){
 	return sentence;}
     
