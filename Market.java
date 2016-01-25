@@ -179,6 +179,8 @@ public void run(){
 		
 		}
 	    }
+	    if (option == 4){
+		return;}
 	    System.out.println(" select an option\n [1] Buy and Sell and View stocks \n  [2] view your balance/stocks owned \n [3] progress \n[4] retire");
 	    try{
 		temp =  Integer.parseInt( in.readLine() );
@@ -188,6 +190,8 @@ public void run(){
 	    if ( temp > 0){
 		option= temp;
 	    }
+	    if (option == 4){
+		return;}
 	}
     
 	int rando= (int)(Math.random() * newe.size());
