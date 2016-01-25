@@ -29,6 +29,31 @@ Day 6
 Matt added amtOwned to stock
 Matt revised SubStock progress algorithms. Added momVol.
 
+Day 7
+Matt added Player class
+Matt revised Substock algorithms
+Matt debugged stock and graph cooperation
+Matt added amtOwned to stock and implentation
+
+Day 8
+We polished subclasses and balanced the algorithm
+
+Day 9
+Matt added Headline.java
+Matt added Player history stock
+Matt added goal.java and added functionality
+Matt fixed subclasses
+Matt created Independent.java
+Matt fixed subclass constructors
+Matt researched and added new stocks.
+Matt solved menu errors for [2] and [4]
+Matt solved rounding errors in graph
+
+Day 10
+Matt corrected Max's grammar
+Matt notated code
+
+
 Day 1000
 
 We finshied everything!
