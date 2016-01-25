@@ -1,8 +1,3 @@
-Started 1/14/16
--Refine algorithim
--get headlines**
--get goals
--get selling
--get graph axis
-
+1/25/16
+DONE
 
