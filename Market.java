@@ -226,7 +226,7 @@ public class Market{
 		    System.out.println("[" + num + "]" + g);
 		    num ++;
 		}
-		System.out.println("Cash in a goal? [1]Yes [2] No");//not 
+		System.out.println("Cash in a goal? [1]Yes [2] No");
 		int temper = 0;
 		String fool = "0";
 		try{
@@ -258,7 +258,7 @@ public class Market{
 		    pl.g.get(temperal -1 ).reward(pl);
 		}
 		else if (temper == 2){
-		    System.out.println("Ok");
+		    System.out.println("Ok come back soon!");//i had to put something here
 		}
 	    }
 		    
@@ -266,7 +266,7 @@ public class Market{
 	    
 	    if (option == 4){
 		return;}
-	    System.out.println(" Select an option\n [1] Buy and Sell and View stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View Goals");
+	    System.out.println(" Select an option\n [1] Buy and Sell and View stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View Goals");//for looping sake
 	    String fooy = "0";
 	    try{
 		fooy = in.readLine();
@@ -284,21 +284,18 @@ public class Market{
 		return;}
 	}
     
-	int rando= (int)(Math.random() * newe.size());
+	int rando= (int)(Math.random() * newe.size());//generate next weeks headline
 	Headline header = newe.get(rando).getRandoHead();
 	Stock headerstock = newe.get(rando);
 
-	if (header.changesMomentum){
+	if (header.changesMomentum){//start its effects (it only changes momementum so we have to start it in advance
 	    headerstock.setMomentum(headerstock.getMomentum() + (header.worth/100.0)*(headerstock.getCurVal()));
 	}else{
 	    headerstock.setCurVal(headerstock.getCurVal() + (header.worth/100 * headerstock.getMomentum()));
 	}
 
-	rando= (int)(Math.random() * newe.size());
-        header = newe.get(rando).getRandoHead();
-	headerstock = newe.get(rando);
 	System.out.println("Day " + counter);
-	System.out.println(header);
+	System.out.println(header); //print the headline
 
 				    
 	for (int i =0; i < newe.size(); i++){
@@ -326,7 +323,7 @@ public class Market{
   
    
 
-    public static ArrayList<Stock> viewByPrice( ArrayList<Stock> st ) {
+    public static ArrayList<Stock> viewByPrice( ArrayList<Stock> st ) {// sorts using bubble sort
 	Stock first;
 	Stock second;
 	for(int x = 0; x < st.size() - 1; x ++){
@@ -338,7 +335,7 @@ public class Market{
 		st.set((i - 1),second);}
 	}}
 	return st;}
-    public static ArrayList<Stock> viewByChange( ArrayList<Stock> st ) {
+    public static ArrayList<Stock> viewByChange( ArrayList<Stock> st ) {// sorts using bubble sort
 	Stock first;
 	Stock second;
 	for(int x = 0; x < st.size() - 1; x ++){
@@ -353,7 +350,7 @@ public class Market{
 	
 
 
-}
+}// end class market
 	    
 
 

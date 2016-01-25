@@ -18,21 +18,25 @@ public class Main{
     ArrayList<Double> list1 = new ArrayList<Double>();//list for prices
      ArrayList<String> gverbs = new ArrayList<String>();
      //add verbs
-     gverbs.add("die");
+     gverbs.add("thrive");
      gverbs.add("Do extremely Well");
      gverbs.add("Shut Down unexpecdelty");
+     gverbs.add("undersell in china");
      ArrayList<String> gnouns = new ArrayList<String>();
      //add nouns
      gnouns.add("android");
      gnouns.add("Nexus");
      gnouns.add("Gmail");
+     gnouns.add("Chromebooks");
      ArrayList<Double> gw = new ArrayList<Double>();
      //add change percent
-     gw.add(-5.0);
-     gw.add(4.50);
+     gw.add(2.0);
+     gw.add(2.50);
      gw.add(-2.50);
+     gw.add(-2.0);
      ArrayList<Boolean> gcm = new ArrayList<Boolean>();
      //add momentum change var and previous prices
+     gcm.add(true);
      gcm.add(true);
      gcm.add(true);
      gcm.add(true);
@@ -53,18 +57,22 @@ public class Main{
     averbs.add("crash");
     averbs.add("sell a trillion units");
     averbs.add("release without a 3.5mm port");
+    averbs.add("Screens mor ebeautiful than ever before");
     ArrayList<String> anouns = new ArrayList<String>();
     //add nouns
     anouns.add("Iwatch");
     anouns.add("Mac");
     anouns.add("iPhone");
+    anouns.add("iMac");
     ArrayList<Double> aw = new ArrayList<Double>();
     //add change percent
     aw.add(-6.00);
-    aw.add(15.0);
-    aw.add(-10.00);
+    aw.add(5.0);
+    aw.add(-5.00);
+    aw.add(6.0);
     ArrayList<Boolean> acm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
+    acm.add(true);
     acm.add(true);
     acm.add(true);
     acm.add(true);
@@ -84,18 +92,22 @@ public class Main{
      bpverbs.add("spill into the gulf.");
      bpverbs.add("explode");
      bpverbs.add("be up.");
+     bpverbs.add("find new oil reserves in alaska");
      ArrayList<String> bpnouns = new ArrayList<String>();
      //add nouns
      bpnouns.add("BP oil");
      bpnouns.add("BP tanker");
      bpnouns.add("BP sales");
+     bpnouns.add("BP");
      ArrayList<Double> bpw = new ArrayList<Double>();
      //add change percent
      bpw.add(-5.5);
      bpw.add(-4.50);
-     bpw.add(10.000);
+     bpw.add(5.500);
+     bpw.add(4.5);
      ArrayList<Boolean> bpcm = new ArrayList<Boolean>();
      //add momentum change var and previous prices
+     bpcm.add(true);
      bpcm.add(true);
      bpcm.add(true);
      bpcm.add(true);
@@ -116,18 +128,22 @@ public class Main{
     shverbs.add("create green oil.");
     shverbs.add("cause caner");
     shverbs.add("donate to poor countries");
+    shverbs.add("run dry in texas");
     ArrayList<String> shnouns = new ArrayList<String>();
     //add nouns
     shnouns.add("Shell");
     shnouns.add("Shell oil");
     shnouns.add("Shell");
+    shnouns.add("Shell digging");
     ArrayList<Double> shw = new ArrayList<Double>();
     //add change percent
     shw.add(3.0);
     shw.add(-3.0);
-    shw.add(6.00);
+    shw.add(1.00);
+    shw.add(-1.0);
     ArrayList<Boolean> shcm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
+    shcm.add(true);
     shcm.add(true);
     shcm.add(true);
     shcm.add(true);
@@ -147,18 +163,22 @@ public class Main{
     tverbs.add("crash");
     tverbs.add("be endorsed by Obama");
     tverbs.add("tweet, 'this is a great website #twitter #is #great'");
+    tverbs.add("increase character count to one million");
     ArrayList<String> tnouns = new ArrayList<String>();
     //add nouns
     tnouns.add("Twitter servers");
     tnouns.add("Twitter");
     tnouns.add("Bono");
+    tnouns.add("Twitter corp");
     ArrayList<Double> tw = new ArrayList<Double>();
     //add change percent
-    tw.add(-5.0);
+    tw.add(-2.0);
     tw.add(2.50);
-    tw.add(2.70);
+    tw.add(3.00);
+    tw.add(-3.5);
     ArrayList<Boolean> tcm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
+    tcm.add(true);
     tcm.add(true);
     tcm.add(true);
     tcm.add(true);
@@ -180,18 +200,22 @@ public class Main{
     netverbs.add("be cancelled");
     netverbs.add("sign new contract");
     netverbs.add("greenlight more superhero TV shows");
+    netverbs.add("stop allowing netflix and chilling");
     ArrayList<String> netnouns = new ArrayList<String>();
     //add nouns
     netnouns.add("Netflix shows");
     netnouns.add("HBO and Netflix");
     netnouns.add("Netflix");
+    netnouns.add("Netflix");
     ArrayList<Double> netw = new ArrayList<Double>();
     //add change percent
     netw.add(-4.0);
-    netw.add(2.50);
+    netw.add(4.0);
     netw.add(3.0);
+    netw.add(-3.0);
     ArrayList<Boolean> netcm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
+    netcm.add(true);
     netcm.add(true);
     netcm.add(true);
     netcm.add(true);
@@ -211,18 +235,22 @@ public class Main{
     piverbs.add("be broken");
     piverbs.add("be hacked");
     piverbs.add("unveil a new algorithm");
+    piverbs.add("get bought by big vc");
     ArrayList<String> pinouns = new ArrayList<String>();
     //add nouns
     pinouns.add("Pied Piper's compression algorithm");
     pinouns.add("Pied Piper's servers");
     pinouns.add("Pied Piper");
+    pinouns.add("Startup Pied Piper");
     ArrayList<Double> piw = new ArrayList<Double>();
     //add change percent
     piw.add(-5.0);
     piw.add(-5.0);
-    piw.add(10.0);
+    piw.add(5.0);
+    piw.add(5.0);
     ArrayList<Boolean> picm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
+    picm.add(true);
     picm.add(true);
     picm.add(true);
     picm.add(true);
@@ -242,20 +270,24 @@ public class Main{
     snowverbs.add("convince his dad to shut schools");
     snowverbs.add("become fashionable");
     snowverbs.add("come");
+    snowverbs.add("be warmer than normal");
     ArrayList<String> snownouns = new ArrayList<String>();
     //add nouns
     snownouns.add("Dante DeBlasio");
     snownouns.add("Bikinis");
     snownouns.add("Winter");
+    snownouns.add("This Winter is");
     ArrayList<Double> snoww = new ArrayList<Double>();
     //add change percent
-    snoww.add(-1.0);
+    snoww.add(1.0);
     snoww.add(-1.0);
     snoww.add(2.0);
+    snoww.add(-2.0);
     ArrayList<Boolean> snowcm = new ArrayList<Boolean>();
     //add momentum change var and previous prices
     snowcm.add(true);
     snowcm.add(false);
+    snowcm.add(true);
     snowcm.add(true);
     list8.add(51.2);
     list8.add(53.3);
