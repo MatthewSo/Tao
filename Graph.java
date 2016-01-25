@@ -21,8 +21,8 @@ public class Graph{
     public Graph(Stock stock){
 	this.stock = stock;
 	this.prices = stock.getPrices();
-	if (prices.size() >=30){
-	    this.matrix = new double[30][15];
+	if (prices.size() >=50){
+	    this.matrix = new double[50][15];
 	} else{
 	    this.matrix = new double[prices.size()][15];
 	}
