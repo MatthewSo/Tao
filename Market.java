@@ -28,20 +28,20 @@ public class Market{
 	in = new BufferedReader( isr );
     }
     
-    public static void view(ArrayList<Stock> st){
+    public static void view(ArrayList<Stock> st){// To print out stock names, prices and changes
 	for(int i = 0; i < st.size(); i++){
 	    Stock a = st.get(i);
 	    System.out.println("[" + i + "]" + a.getName() + "|" + rounder(a.getCurVal()) +"|" +  rounder(a.getChangeAmount()) + "\n");
 	}
     }
-        public static void viewXTRA(ArrayList<Stock> st){
+    public static void viewXTRA(ArrayList<Stock> st){// prints out stock graphs
 	for(int i = 0; i < st.size(); i++){
 	    Stock a = st.get(i);
 	    System.out.println("[" + i + "]" + a.getName() + "|" + rounder(a.getCurVal()) + "\n" +a);
 	}
     }
 
-    public void run10(){
+    public void run10(){// runs 10 times for the purpose of having a simulation set up at the start
 	for (int x = 0; x < 10; x++){
 		for (int i =0; i < stocks.size(); i++){
 		stocks.get(i).progress();
@@ -51,14 +51,14 @@ public class Market{
 		
 	     
 	
-    public void buy(){
-	ArrayList<Stock> newe = this.stocks;
+    public void buy(){// Buys stocks
+	ArrayList<Stock> newe = this.stocks;// easily maniuplatable
 	view(newe);
 	int option = 0;
 	int num =0;
 	int temp = 0;
-	System.out.println("Select an option\n \n [0] View graphs\n [1] Sort by price\n [2] Sort by change percent \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance and stocks owned");
-	String fa = "0";
+	System.out.println("Select an option\n \n [0] View graphs\n [1] Sort by price\n [2] Sort by change percent \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance and stocks owned");// options
+	String fa = "0";//this stuff is all over and its just to snatitize inputs
 	try{
 	    fa = in.readLine();
 	}
@@ -71,14 +71,14 @@ public class Market{
 	    option=temp;
 	}
 	/////////////////////////
-	while (option != 4){
+	while (option != 4){// run until they press back
 	    if (option == 1){
-	    newe = viewByPrice(newe);
+		newe = viewByPrice(newe);//sort
 	    //view(newe);
 		//break;
 	    }
 	     else if (option == 2){
-		newe = viewByChange(newe);
+		 newe = viewByChange(newe);//sort
 		//view(newe);
 		//break;
 	    }
@@ -129,7 +129,7 @@ public class Market{
 		    int i;
 		    i = sto;
 	      
-		    if (pl.getDol() > newe.get(i).getCurVal() * num){
+		    if (pl.getDol() > newe.get(i).getCurVal() * num){// check to see if they have enough money
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() + num);
 			pl.newWorth(pl.getDol() - (newe.get(i).getCurVal() * num));
 			System.out.println("You bought " + num + " of " + newe.get(i).getName() + ". Your new balance is " + rounder(pl.getDol()) + "!");
@@ -139,11 +139,6 @@ public class Market{
 		}else if (b == 2){
 		    		    
 		    System.out.println("How much? You own " + newe.get(sto).getAmtOwned() + " and its price per stock is $" + rounder(newe.get(sto).getCurVal()));
-		    //  String foo = "0";
-		    //   try{
-			//	foo = in.readLine();
-			// }
-		    //catch ( Exception e ) { }
 		    String bar = "0";
 		    try{
 			bar = in.readLine();
@@ -156,7 +151,7 @@ public class Market{
 		    num = temp;
 		    int i;
 		    i = sto;
-		    if (newe.get(i).getAmtOwned() >= num){
+		    if (newe.get(i).getAmtOwned() >= num){ //check to see they have enough stock
 			newe.get(i).setAmtOwned(newe.get(i).getAmtOwned() - num);
 			pl.newWorth(pl.getDol() + (newe.get(i).getCurVal() * num));
 			System.out.println("You sold " + num + " of " + newe.get(i).getName() + ". Your new balance is " + rounder(pl.getDol()) + "!");
@@ -165,9 +160,8 @@ public class Market{
 			System.out.println("Not enough stock to sell.");
 		    }
 		}
-		//	break;
 	    }
-	    else if (option == 5){
+	    else if (option == 5){// just print some stats
 		System.out.println("Your Balance is: " +rounder( pl.getDol()));
 		System.out.println(pl);
 		for (Stock a:newe){
@@ -175,10 +169,9 @@ public class Market{
 			System.out.println("You own " + a.getAmtOwned() +  " of " + a.getName());
 		    }
 		}
-		//break;
 	    }		    
 	     view(newe);
-	    System.out.println("Select an option\n [0] View Graphs \n [1] Sort by price\n [2] Sort by percent change \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance/stocks owned");
+	     System.out.println("Select an option\n [0] View Graphs \n [1] Sort by price\n [2] Sort by percent change \n [3] Buy/Sell a specific stock \n [4] Back \n [5] View your balance/stocks owned");// this happens so it can keep looping and choosing options
 	    String fooi = "0";
 	    try{
 		fooi = in.readLine();
@@ -194,10 +187,10 @@ public class Market{
 	}
     }
 	
-public void run(){
-    while(true){
+    public void run(){// The main method
+	while(true){//always run until they quit
 	
-	System.out.println(" Select an option\n [1] Buy and Sell and view stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View goals");
+	    System.out.println(" Select an option\n [1] Buy and Sell and view stocks \n [2] View your balance/stocks owned \n [3] Progress \n [4] Retire \n [5] View goals");//options
 	int temp = 0;
 	String foog = "0";
 	try{
@@ -217,8 +210,8 @@ public void run(){
 	while (option != 3){
 	    if (option == 1){
 		buy();
-	    }else if (option == 2){
-		System.out.println("Your Balance is: " + pl.getDol());
+	    }else if (option == 2){// same as above
+		System.out.println("Your Balance is: " + rounder(pl.getDol()));
 		System.out.println(pl);
 		for (Stock a:newe){
 		    if( a.getAmtOwned() > 0){
@@ -227,13 +220,13 @@ public void run(){
 		
 		}
 	    }
-	    else if (option == 5){
+	    else if (option == 5){//prints out all the goals with numbers in order 
 		int num =1;
 		for (Goal g: pl.g){
 		    System.out.println("[" + num + "]" + g);
 		    num ++;
 		}
-		System.out.println("Cash in a goal? [1]Yes [2] No");
+		System.out.println("Cash in a goal? [1]Yes [2] No");//not 
 		int temper = 0;
 		String fool = "0";
 		try{
